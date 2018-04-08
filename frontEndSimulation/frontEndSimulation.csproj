@@ -99,6 +99,10 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sim\Car.cs" />
+    <Compile Include="Sim\Main.cs" />
+    <Compile Include="Sim\Parkeringspot.cs" />
+    <Compile Include="Sim\ParkingQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
