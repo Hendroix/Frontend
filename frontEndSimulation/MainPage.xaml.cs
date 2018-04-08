@@ -28,7 +28,7 @@ namespace frontEndSimulation
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public int amountOfCars, timeFrom, timeTo;
+        public int amountOfCars, timeFrom, timeTo, simulationSpeed;
         public int[] parkeringsPlasserArray = new int[11];
         public String[] parkeringsPlasserArrayPrint = {"plasser_Inspiria", "plasser_InspiriaBak", "plasser_Superland", "plasser_Quality", "plasser_Kiwi",
             "plasser_Politiet", "plasser_Caverion", "plasser_K5", "plasser_TuneSeteret", "plasser_AdeccoOgIf", "plasser_Fagforbundet"};
@@ -56,7 +56,15 @@ namespace frontEndSimulation
             if (double.TryParse(percentagecheck, out tmp) && tmp == 100)
             {
                 Debug.WriteLine("Nå skal simuleringen starte");
-                main.Initialize(parkeringsPercentArray, parkeringsPercentArray, amountOfCars, timeFrom, timeTo);
+                TextBox cars = this.FindName("cars") as TextBox;
+                amountOfCars = int.Parse(cars.Text);
+                TextBox from = this.FindName("fromTime") as TextBox;
+                timeFrom = 0;
+                TextBox to = this.FindName("toTime") as TextBox;
+                timeTo = 1080;
+                TextBox s = this.FindName("speed") as TextBox;
+                simulationSpeed = int.Parse(s.Text);
+                main.Initialize(parkeringsPlasserArray, parkeringsPercentArray, amountOfCars, timeFrom, timeTo, simulationSpeed);
             }
             else
             {

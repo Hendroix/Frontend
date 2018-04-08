@@ -66,12 +66,14 @@
         <TextBlock x:Name="percentage" HorizontalAlignment="Left" Margin="525,653,0,-5" Text="100%" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Height="72" Width="66" Foreground="Green"/>
         <!-- Biler -->
         <TextBlock FontSize="36" HorizontalAlignment="Left" Margin="862,10,0,0" Text="Antall Biler" TextWrapping="Wrap" VerticalAlignment="Top" Height="55" Width="174"/>
-        <TextBlock HorizontalAlignment="Left" Margin="890,67,0,0" Text="Inkommende biler:" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="140"/>
-        <TextBox InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="890,100,0,0" Text="1200" VerticalAlignment="Top" TextAlignment="Center" MaxLength="4" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
+        <TextBlock HorizontalAlignment="Left" Margin="835,67,0,0" Text="Inkommende biler:" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="140"/>
+        <TextBox x:Name="cars" InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="852,100,0,0" Text="1096" VerticalAlignment="Top" TextAlignment="Center" MaxLength="4" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
+        <TextBlock HorizontalAlignment="Left" Margin="990,67,0,0" Text="Simuleringshastighet:" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="147"/>
+        <TextBox x:Name="speed" InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="1020,100,0,0" Text="10" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
         <!-- Tid -->
         <TextBlock HorizontalAlignment="Left" Margin="845,180,0,0" Text="Tidsrommet simuleringen gjøres i:" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="231"/>
-        <TextBox InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="845,220,0,0" Text="07:00" VerticalAlignment="Top" TextAlignment="Center" MaxLength="4" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
-        <TextBox InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="980,220,0,0" Text="10:00" VerticalAlignment="Top" TextAlignment="Center" MaxLength="4" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
+        <TextBox x:Name="fromTime" InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="845,220,0,0" Text="07:00" VerticalAlignment="Top" TextAlignment="Center" MaxLength="4" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
+        <TextBox x:Name="toTime" InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="980,220,0,0" Text="10:00" VerticalAlignment="Top" TextAlignment="Center" MaxLength="4" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
         <!-- Start Simulation -->
         <Button x:Name="startButton" Content="Simuler" HorizontalAlignment="Left" Margin="862,581,0,0" VerticalAlignment="Top" Width="200" Click="startButton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="804,373,0,0" Text="The percentages need to be a total of 100%. We wil tell you here if you try to simulate without a 100%." TextWrapping="Wrap" VerticalAlignment="Top" Height="162" Width="298"/>
