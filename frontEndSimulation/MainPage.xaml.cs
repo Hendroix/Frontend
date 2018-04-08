@@ -61,7 +61,7 @@ namespace frontEndSimulation
                 TextBox from = this.FindName("fromTime") as TextBox;
                 timeFrom = 0;
                 TextBox to = this.FindName("toTime") as TextBox;
-                timeTo = 1080;
+                timeTo = 1900;
                 TextBox s = this.FindName("speed") as TextBox;
                 simulationSpeed = int.Parse(s.Text);
                 main.Initialize(parkeringsPlasserArray, parkeringsPercentArray, amountOfCars, timeFrom, timeTo, simulationSpeed);
