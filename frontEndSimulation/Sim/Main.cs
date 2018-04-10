@@ -143,10 +143,10 @@ namespace Parkeringssimulering
             finalSimTime = timeTo;
             delaySleepTime = speed;
             currentlyMade = 0;
-            //Un comment this for a shit tun of cars to arrive
+            //Uncomment this for a shit tun of cars to arrive
             totalAmountOfCarsCounter = 0;
             totalAmountOfCars = 1096 - amountOfCars;
-            //totalAmountOfCars = -300;
+            totalAmountOfCars = totalAmountOfCars - 600;
             generateRandomNumbers();
             //Start of While simulation loop
             while (currentSimTime <= finalSimTime)
@@ -445,7 +445,7 @@ namespace Parkeringssimulering
                                     c.setDestination(superland);
                                 }
                                 else
-                                {
+                                { 
                                     c.setDestination(quality);
                                 }
                                 Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
@@ -765,12 +765,12 @@ namespace Parkeringssimulering
                         Car c = (Car)pq.carsInQueue.Peek();
                         if (c.getTimeOfCreation() < currentSimTime && c.timeOfQueuing < currentSimTime)
                         {
-                            pq.carsInQueue.Dequeue();
                             c.setTimeofParking(currentSimTime);
                             Parkingspot ps = c.Destination;
                             //Til Inspiria bak
                             if (ps.name == inspiriaBak.name && ps.Free())
                             {
+                                pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
@@ -791,6 +791,7 @@ namespace Parkeringssimulering
                             //Til Caverion
                             else if (ps.name == caverion.name && ps.Free())
                             {
+                                pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
@@ -811,6 +812,7 @@ namespace Parkeringssimulering
                             //Til k5
                             else if (ps.name == k5.name && ps.Free())
                             {
+                                pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
@@ -831,6 +833,7 @@ namespace Parkeringssimulering
                             //Send videre til sykehusveienNorth_4
                             else if (sykehusVeienNorth_4.checkIfFree() == true)
                             {
+                                pq.carsInQueue.Dequeue();
                                 sykehusVeienNorth_4.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienNorth_3.name + " til " + sykehusVeienNorth_4.name);
@@ -843,11 +846,11 @@ namespace Parkeringssimulering
                         Car c = (Car)pq.carsInQueue.Peek();
                         if (c.getTimeOfCreation() < currentSimTime && c.timeOfQueuing < currentSimTime)
                         {
-                            pq.carsInQueue.Dequeue();
                             c.setTimeofParking(currentSimTime);
                             Parkingspot ps = c.Destination;
                             if (sykehusVeienSouth.checkIfFree() == true)
                             {
+                                pq.carsInQueue.Dequeue();
                                 sykehusVeienSouth.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienNorth_4.name + " til " + sykehusVeienSouth.name);
@@ -860,12 +863,12 @@ namespace Parkeringssimulering
                         Car c = (Car)pq.carsInQueue.Peek();
                         if (c.getTimeOfCreation() < currentSimTime && c.timeOfQueuing < currentSimTime)
                         {
-                            pq.carsInQueue.Dequeue();
                             c.setTimeofParking(currentSimTime);
                             Parkingspot ps = c.Destination;
                             //Til Inspiria bak
                             if (ps.name == inspiriaBak.name && ps.Free())
                             {
+                                pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
@@ -886,6 +889,7 @@ namespace Parkeringssimulering
                             //Til Caverion
                             else if (ps.name == caverion.name && ps.Free())
                             {
+                                pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
@@ -906,6 +910,7 @@ namespace Parkeringssimulering
                             //Til k5
                             else if (ps.name == k5.name && ps.Free())
                             {
+                                pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
@@ -926,6 +931,7 @@ namespace Parkeringssimulering
                             //Send videre til sykehusveienSouth_1
                             else if (sykehusVeienSouth_1.checkIfFree() == true)
                             {
+                                pq.carsInQueue.Dequeue();
                                 sykehusVeienSouth_1.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienSouth.name + " til " + sykehusVeienSouth_1.name);
@@ -938,11 +944,11 @@ namespace Parkeringssimulering
                         Car c = (Car)pq.carsInQueue.Peek();
                         if (c.getTimeOfCreation() < currentSimTime && c.timeOfQueuing < currentSimTime)
                         {
-                            pq.carsInQueue.Dequeue();
                             c.setTimeofParking(currentSimTime);
                             Parkingspot ps = c.Destination;
                             if (sykehusVeienSouth_2.checkIfFree() == true)
                             {
+                                pq.carsInQueue.Dequeue();
                                 sykehusVeienSouth_2.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienSouth_1.name + " til " + sykehusVeienSouth_2.name);
@@ -956,12 +962,12 @@ namespace Parkeringssimulering
                         Car c = (Car)pq.carsInQueue.Peek();
                         if (c.getTimeOfCreation() < currentSimTime && c.timeOfQueuing < currentSimTime)
                         {
-                            pq.carsInQueue.Dequeue();
                             c.setTimeofParking(currentSimTime);
                             Parkingspot ps = c.Destination;
                             //Til Inspiria
                             if (ps.name == inspiria.name && ps.Free())
                             {
+                                pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
@@ -983,6 +989,7 @@ namespace Parkeringssimulering
                             //Send videre til sykehusveienSouth_3
                             else if (sykehusVeienSouth_3.checkIfFree() == true)
                             {
+                                pq.carsInQueue.Dequeue();
                                 sykehusVeienSouth_3.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienSouth_2.name + " til " + sykehusVeienSouth_3.name);
@@ -1163,7 +1170,6 @@ namespace Parkeringssimulering
             printRemainingCarsInQueue(parkingQueueArrayCheck);
             //send back the simulation data to the MainPage frontend
             return returnStringContext;
-
         }
         /// <summary>
         /// Creates and give purpose to the cars.
@@ -1465,7 +1471,6 @@ namespace Parkeringssimulering
                 else if (c < chance && chance <= 1.0f)
                 {
                     arrivingCars++;
-                    chance = (chance - luckyShot);
                     randomPointer2++;
                 }
                 else
@@ -1609,6 +1614,14 @@ namespace Parkeringssimulering
             }
 
         }
+        /// <summary>
+        /// Determines whether [has tried parking at] [the specified c].
+        /// </summary>
+        /// <param name="c">The c.</param>
+        /// <param name="visitedPS">The visited ps.</param>
+        /// <returns>
+        ///   <c>true</c> if [has tried parking at] [the specified c]; otherwise, <c>false</c>.
+        /// </returns>
         static bool hasTriedParkingAt(Car c, Parkingspot visitedPS)
         {
             foreach (Parkingspot ps in c.visitedParkingspots)
