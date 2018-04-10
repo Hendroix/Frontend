@@ -579,7 +579,7 @@ namespace Parkeringssimulering
                             {
                                 if (hasTriedParkingAt(c, tuneSenter))
                                 {
-                                    c.setDestination(superland);
+                                    c.setDestination(fagforbundet);
                                 }
                                 else
                                 {
@@ -621,11 +621,11 @@ namespace Parkeringssimulering
                             {
                                 if (hasTriedParkingAt(c, inspiria))
                                 {
-                                    c.setDestination(inspiriaBak);
+                                    c.setDestination(inspiria);
                                 }
                                 else
                                 {
-                                    c.setDestination(inspiria);
+                                    c.setDestination(quality);
                                 }
                                 Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
@@ -667,7 +667,7 @@ namespace Parkeringssimulering
                                 }
                                 else
                                 {
-                                    c.setDestination(fagforbundet);
+                                    c.setDestination(politi);
                                 }
                                 Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
@@ -684,11 +684,11 @@ namespace Parkeringssimulering
                             {
                                 if (hasTriedParkingAt(c, kiwi))
                                 {
-                                    c.setDestination(politi);
+                                    c.setDestination(kiwi);
                                 }
                                 else
                                 {
-                                    c.setDestination(kiwi);
+                                    c.setDestination(politi);
                                 }
                                 Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
@@ -708,12 +708,12 @@ namespace Parkeringssimulering
                         Car c = (Car)pq.carsInQueue.Peek();
                         if (c.getTimeOfCreation() < currentSimTime && c.timeOfQueuing < currentSimTime)
                         {
-                            pq.carsInQueue.Dequeue();
                             c.setTimeofParking(currentSimTime);
                             Parkingspot ps = c.Destination;
                             //Til Inspiria
                             if (ps.name == inspiria.name && ps.Free())
                             {
+                                pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
@@ -734,6 +734,7 @@ namespace Parkeringssimulering
                             //Send videre til sykehusVeienNorth_2
                             else if (sykehusVeienNorth_2.checkIfFree() == true)
                             {
+                                pq.carsInQueue.Dequeue();
                                 sykehusVeienNorth_2.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienNorth_1.name + " til " + sykehusVeienNorth_2.name);
