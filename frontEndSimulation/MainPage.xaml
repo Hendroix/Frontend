@@ -69,7 +69,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="835,67,0,0" Text="Inkommende biler:" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="140"/>
         <TextBox x:Name="cars" InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="852,100,0,0" Text="1096" VerticalAlignment="Top" TextAlignment="Center" MaxLength="4" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
         <TextBlock HorizontalAlignment="Left" Margin="990,67,0,0" Text="Simuleringshastighet:" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="147"/>
-        <TextBox x:Name="speed" InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="1020,100,0,0" Text="10" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
+        <TextBox x:Name="speed" InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="1020,100,0,0" Text="1" VerticalAlignment="Top" TextAlignment="Center" MaxLength="3" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
         <!-- Tid -->
         <TextBlock HorizontalAlignment="Left" Margin="845,180,0,0" Text="Tidsrommet simuleringen gjøres i:" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="231"/>
         <TextBox x:Name="fromTime" InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="845,220,0,0" Text="07:00" VerticalAlignment="Top" TextAlignment="Center" MaxLength="4" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>

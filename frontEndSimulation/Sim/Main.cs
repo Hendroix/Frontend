@@ -13,21 +13,55 @@ namespace Parkeringssimulering
     /// </summary>
     public class main
     {
+        /// <summary>
+        /// The return string context
+        /// </summary>
+        public static string returnStringContext;
+        /// <summary>
+        /// The random
+        /// </summary>
         public static Random random;
+        /// <summary>
+        /// The s random
+        /// </summary>
         public static Random s_Random = new Random();
-
+        /// <summary>
+        /// The random array
+        /// </summary>
         public static int[] randomArray = new int[1000000], randomArray3 = new int[1000000];
+        /// <summary>
+        /// The random array2
+        /// </summary>
         public static double[] randomArray2 = new double[1000000];
+        /// <summary>
+        /// The random pointer
+        /// </summary>
         public static int randomPointer = 1, randomPointer2 = 1, randomPointer3 = 1;
-
+        /// <summary>
+        /// The inspiria
+        /// </summary>
         public static Parkingspot inspiria, inspiriaBak, superland, quality, kiwi, politi, caverion, k5, tuneSenter, adeccoAndIf, fagforbundet;
+        /// <summary>
+        /// The kiwi
+        /// </summary>
         public static int Kiwi, Inspiria, InspiriaBak, Superland, Quality, Politi, Caverion, K5, TuneSenter, AdeccoAndIf, Fagforbundet;
-
+        /// <summary>
+        /// The arriving cars
+        /// </summary>
         public static int arrivingCars, maxParkingspots, freeSpaces, takenSpaces, totalAmountOfCars, currentSimTime, finalSimTime, counldtFindParking, delaySleepTime, currentlyMade, totalAmountOfCarsCounter;
-
+        /// <summary>
+        /// Initializes the specified parking spots.
+        /// </summary>
+        /// <param name="parkingSpots">The parking spots.</param>
+        /// <param name="parkingPercentage">The parking percentage.</param>
+        /// <param name="amountOfCars">The amount of cars.</param>
+        /// <param name="timeFrom">The time from.</param>
+        /// <param name="timeTo">The time to.</param>
+        /// <param name="speed">The speed.</param>
+        /// <returns></returns>
         public static string Initialize(int[] parkingSpots, int[] parkingPercentage, int amountOfCars, int timeFrom, int timeTo, int speed)
         {
-
+            returnStringContext = "";
             //Trafic queues.
             //E6
             Queue e6Queue = new Queue();
@@ -101,7 +135,8 @@ namespace Parkeringssimulering
                 sykehusVeienNorth, sykehusVeienNorth_1, sykehusVeienNorth_2, sykehusVeienNorth_3, sykehusVeienNorth_4, sykehusVeienSouth, sykehusVeienSouth_1, sykehusVeienSouth_2,
                 sykehusVeienSouth_3, sykehusVeienSouth_4 };
 
-            printTotalParkingInfo(parkingspotArray);
+            //printTotalParkingInfo(parkingspotArray);
+            //returnStringContext += "\r\n";
 
             //Defines the starting criterias
             currentSimTime = timeFrom;
@@ -116,248 +151,249 @@ namespace Parkeringssimulering
             //Start of While simulation loop
             while (currentSimTime <= finalSimTime)
             {
-
+                Debug.WriteLine("Runde: " + currentSimTime + " Tid: " + calculateTimeFromIntervals(currentSimTime));
+                returnStringContext += ("Runde: " + currentSimTime + " Tid: " + calculateTimeFromIntervals(currentSimTime));
                 //Intervall round 1
                 if (currentSimTime <= 30)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(2.93f);
                         if (totalAmountOfCars < 88)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(2.93f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 2
                  if (currentSimTime <= 90 && currentSimTime > 30)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(0.8f);
                         if (totalAmountOfCars < 136)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(0.8f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 3
                  if (currentSimTime <= 114 && currentSimTime > 90)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
-                    {   
+                    {
+                        int carsToBeMade = getArrivingCarsRandom(0.58f);
                         if (totalAmountOfCars < 150)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(0.58f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 4
                  if (currentSimTime <= 180 && currentSimTime > 114)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(2.15f);
                         if (totalAmountOfCars < 292)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(2.15f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 5
                  if (currentSimTime <= 234 && currentSimTime > 180)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(0.22f);
                         if (totalAmountOfCars < 304)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(0.22f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 6
                  if (currentSimTime <= 270 && currentSimTime > 234)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(2.25f);
                         if (totalAmountOfCars < 385)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(2.25f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 7
                  if (currentSimTime <= 312 && currentSimTime > 270)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(1.36f);
                         if (totalAmountOfCars < 442)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(1.36f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 8
                  if (currentSimTime <= 336 && currentSimTime > 312)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(1.58f);
                         if (totalAmountOfCars < 480)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(1.58f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 9
                  if (currentSimTime <= 390 && currentSimTime > 336)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(6.89f);
                         if (totalAmountOfCars < 852)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(6.89f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 10
                  if (currentSimTime <= 450 && currentSimTime > 390)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(0.7f);
                         if (totalAmountOfCars < 894)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(0.7f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 11
                  if (currentSimTime <= 540 && currentSimTime > 450)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(1.41f);
                         if (totalAmountOfCars < 1021)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(1.41f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 12
                  if (currentSimTime <= 630 && currentSimTime > 540)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(0.18f);
                         if (totalAmountOfCars < 1037)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(0.18f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 13
                  if (currentSimTime <= 786 && currentSimTime > 630)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(0.20f);
                         if (totalAmountOfCars < 1068)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(0.20f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 14
                 if (currentSimTime <= 900 && currentSimTime > 786)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(0.11f);
                         if (totalAmountOfCars < 1080)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(0.11f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
                 //Intervall round 15
                 if (currentSimTime <= 1080 && currentSimTime > 900)
                 {
+                    returnStringContext += "\r\n";
                     if (currentlyMade == 0)
                     {
+                        int carsToBeMade = getArrivingCarsRandom(0.09f);
                         if (totalAmountOfCars < 1096)
                         {
-                            Debug.WriteLine("Round: " + currentSimTime + " Time: " + calculateTimeFromIntervals(currentSimTime));
-                            int carsToBeMade = getArrivingCarsRandom(0.09f);
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
+                        returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
                     }
                 }
-
-
+                //Traverse the parkingqueues and move cars that are in the queue.
                 foreach (ParkingQueue pq in parkingQueueArrayCheck)
                 {
                     //Fra E6
@@ -404,7 +440,14 @@ namespace Parkeringssimulering
                             }
                             else if (ps.name == kiwi.name && !ps.Free())
                             {
-                                c.setDestination(quality);
+                                if (hasParkedAt(c, quality))
+                                {
+                                    c.setDestination(superland);
+                                }
+                                else
+                                {
+                                    c.setDestination(quality);
+                                }
                                 Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             else if (tuneVeienNorth_1.checkIfFree() == true)
@@ -961,22 +1004,24 @@ namespace Parkeringssimulering
                     }
 
                 }
-
                 //End of while simulation loop
+                returnStringContext += "\r\n";
                 currentSimTime++;
             }
             //Simulation ended
             printTotalParkingInfo(parkingspotArray);
+            returnStringContext += "\r\n";
             printRemainingCarsInQueue(parkingQueueArrayCheck);
-            return "Completed simulation";
+            //send back the simulation data to the MainPage frontend
+            return returnStringContext;
 
         }
         /// <summary>
         /// Creates and give purpose to the cars.
         /// </summary>
         /// <param name="wantedAmountOfCars">The wanted amount of cars.</param>
-        /// <param name="alreadyMadeCars">The already made cars.</param>
-        /// <param name="listOfParkingsSpots">The list of parkings spots.</param>
+        /// <param name="alreadyMadeCars">The amount of already made cars.</param>
+        /// <param name="listOfParkingsQueues">The list of parkings queues.</param>
         public static void createAndGivePurposeToCars(int wantedAmountOfCars, int alreadyMadeCars, ParkingQueue[] listOfParkingsQueues)
         {
             while (wantedAmountOfCars > alreadyMadeCars)
@@ -988,7 +1033,7 @@ namespace Parkeringssimulering
             }
         }
         /// <summary>
-        /// Generates the random numbers.
+        /// Generates random numbers.
         /// </summary>
         static void generateRandomNumbers()
         {
@@ -1012,7 +1057,7 @@ namespace Parkeringssimulering
         /// <summary>
         /// Gets the random number.
         /// </summary>
-        /// <param name="type">The type.</param>
+        /// <param name="type">The type of random numbers you want int for int else you get a double.</param>
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns></returns>
@@ -1031,7 +1076,7 @@ namespace Parkeringssimulering
             }
         }
         /// <summary>
-        /// Makes the car.
+        /// Makes the car and places it in a starting queue .
         /// </summary>
         /// <param name="chance">The chance.</param>
         /// <param name="queuespot">The queuespot.</param>
@@ -1232,6 +1277,8 @@ namespace Parkeringssimulering
         private static void placeInQueue(ParkingQueue queuespot, Car car)
         {
             queuespot.carsInQueue.Enqueue(car);
+            returnStringContext += ("Car: " + car.id + ", Skal til: " + car.Destination.name + ", kommer fra " + queuespot.name);
+            returnStringContext += "\r\n";
         }
         /// <summary>
         /// Gets the queue.
@@ -1249,32 +1296,33 @@ namespace Parkeringssimulering
         /// <summary>
         /// Gets the arriving cars random.
         /// </summary>
-        /// <param name="chance">The chance.</param>
+        /// <param name="chance">The chance for their to be more than one car arriving at any set interval.</param>
         /// <returns></returns>
         private static int getArrivingCarsRandom(double chance)
         {
             arrivingCars = 0;
             double c;
             bool hit = true;
-            double luckyShot = 0.9f;
+            double luckyShot = 1f;
             while (hit)
             {
                 c = (randomArray2[randomPointer2] / 100);
-                //Debug.WriteLine("C: " + c + " <" + " Chance: " + chance);
                 if (chance > 1.0f)
                 {
                     arrivingCars++;
-                    chance = (chance * luckyShot);
+                    chance = (chance - luckyShot);
+                    randomPointer2++;
                 }
                 else if (c < chance && chance <= 1.0f)
                 {
                     arrivingCars++;
-                    chance = (chance * luckyShot);
+                    chance = (chance - luckyShot);
                     randomPointer2++;
                 }
                 else
                 {
                     hit = false;
+                    randomPointer2++;
                 }
                 randomPointer2++;
             }
@@ -1348,43 +1396,80 @@ namespace Parkeringssimulering
             freeSpaces = 0;
 
             Debug.WriteLine("");
+            //Dollar Sign means spacing or line split
+            returnStringContext += "\r\n";
             Debug.WriteLine("Parkeringsplass oversikt:");
+            returnStringContext += "Parkeringsplass oversikt: ";
+            returnStringContext += "\r\n";
             foreach (Parkingspot p in array)
             {
                 if (p.listOfCars.Count > p.totalParkingSpaces)
                 {
                     Debug.WriteLine(p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces + " TO MANY CARS");
+                    returnStringContext += (p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces + " TO MANY CARS");
+                    returnStringContext += "\r\n";
                 }
                 else
                 {
                     Debug.WriteLine(p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces);
+                    returnStringContext += (p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces);
+                    returnStringContext += "\r\n";
                 }
                 maxParkingspots += p.getTotalParkingSpaces();
                 takenSpaces += p.getTakenSpaces();
             }
             Debug.WriteLine("");
+            returnStringContext += "\r\n";
             Debug.WriteLine("Total oversikt:");
+            returnStringContext += "Total oversikt: ";
+            returnStringContext += "\r\n";
             Debug.WriteLine("Totalt antall parkeringsplasser:          " + maxParkingspots);
+            returnStringContext += ("Totalt antall parkeringsplasser:          " + maxParkingspots);
+            returnStringContext += "\r\n";
             Debug.WriteLine("Totalt antall opptatte parkeringsplasser: " + takenSpaces);
+            returnStringContext += ("Totalt antall opptatte parkeringsplasser: " + takenSpaces);
+            returnStringContext += "\r\n";
             Debug.WriteLine("Totalt antall ledige parkeringsplasser:   " + (maxParkingspots - takenSpaces));
+            returnStringContext += ("Totalt antall ledige parkeringsplasser:   " + (maxParkingspots - takenSpaces));
+            returnStringContext += "\r\n";
             Debug.WriteLine("Total cars made: " + totalAmountOfCarsCounter);
+            returnStringContext += ("Total cars made: " + totalAmountOfCarsCounter);
             Debug.WriteLine("");
+            returnStringContext += "\r\n";
         }
-
+        /// <summary>
+        /// Prints the remaining cars in queue.
+        /// </summary>
+        /// <param name="pq">The Parkingqueues to print info about.</param>
         static void printRemainingCarsInQueue(ParkingQueue[] pq)
         {
             foreach (ParkingQueue queue in pq)
             {
                 Debug.WriteLine(queue.name + "  Biler i min kø: " + queue.carsInQueue.Count);
+                returnStringContext += (queue.name + "  Biler i min kø: " + queue.carsInQueue.Count);
+                returnStringContext += "\r\n";
                 if (queue.carsInQueue.Count > 0)
                 {
                     foreach (Car c in queue.carsInQueue)
                     {
-                        Debug.WriteLine("Car: " + c.id + " Destination: " + c.Destination.name);
+                        Debug.WriteLine("Bil: " + c.id + " destinasjon: " + c.Destination.name);
+                        returnStringContext += ("Bil: " + c.id + " destinasjon: " + c.Destination.name);
+                        returnStringContext += "\r\n";
                     }
                 }
             }
 
+        }
+        static bool hasParkedAt(Car c, Parkingspot visitedPS)
+        {
+            foreach (Parkingspot ps in c.visitedParkingspots)
+            {
+                if (ps == visitedPS)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

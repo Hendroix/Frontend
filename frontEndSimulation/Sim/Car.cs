@@ -19,6 +19,8 @@ namespace Parkeringssimulering
         /// The destination
         /// </summary>
         public Parkingspot Destination, originalDestination;
+
+        public List<Parkingspot> visitedParkingspots = new List<Parkingspot>();
         /// <summary>
         /// The arrival from
         /// </summary>
@@ -66,9 +68,12 @@ namespace Parkeringssimulering
         public void setDestination(Parkingspot ps)
         {
             originalDestination = Destination;
+            visitedParkingspots.Add(ps);
             this.Destination = ps;
         }
-
-
+        public List<Parkingspot> getVisitedParkingspots()
+        {
+            return visitedParkingspots;
+        }
     }
 }

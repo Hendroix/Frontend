@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Parkeringssimulering;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,12 +29,15 @@ namespace frontEndSimulation
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public int amountOfCars, timeFrom, timeTo, simulationSpeed;
-        public int[] parkeringsPlasserArray = new int[11];
-        public String[] parkeringsPlasserArrayPrint = {"plasser_Inspiria", "plasser_InspiriaBak", "plasser_Superland", "plasser_Quality", "plasser_Kiwi",
+        public static int amountOfCars {get; set;}
+        public static int timeFrom {get; set;}
+        public static int timeTo {get; set;}
+        public static int simulationSpeed {get; set;}
+        public static int[] parkeringsPlasserArray = new int[11];
+        public static String[] parkeringsPlasserArrayPrint = {"plasser_Inspiria", "plasser_InspiriaBak", "plasser_Superland", "plasser_Quality", "plasser_Kiwi",
             "plasser_Politiet", "plasser_Caverion", "plasser_K5", "plasser_TuneSeteret", "plasser_AdeccoOgIf", "plasser_Fagforbundet"};
-        public int[] parkeringsPercentArray = new int[11];
-        public String[] parkeringsPercentArrayPrint = {"percentage_Inspiria", "percentage_InspiriaBak", "percentage_Superland", "percentage_Quality", "percentage_Kiwi",
+        public static int[] parkeringsPercentArray = new int[11];
+        public static String[] parkeringsPercentArrayPrint = {"percentage_Inspiria", "percentage_InspiriaBak", "percentage_Superland", "percentage_Quality", "percentage_Kiwi",
             "percentage_Politiet", "percentage_Caverion", "percentage_K5", "percentage_TuneSeteret", "percentage_AdeccoOgIf", "percentage_Fagforbundet"};
 
         public MainPage()
@@ -52,8 +56,7 @@ namespace frontEndSimulation
             TextBlock percentage = this.FindName("percentage") as TextBlock;
             string percentagecheck = percentage.Text.ToString();
             percentagecheck = percentagecheck.Remove(percentagecheck.Length -1);
-            double tmp;
-            if (double.TryParse(percentagecheck, out tmp) && tmp == 100)
+            if (double.TryParse(percentagecheck, out double tmp) && tmp == 100)
             {
                 Debug.WriteLine("Nå skal simuleringen starte");
                 TextBox cars = this.FindName("cars") as TextBox;
@@ -61,10 +64,10 @@ namespace frontEndSimulation
                 TextBox from = this.FindName("fromTime") as TextBox;
                 timeFrom = 0;
                 TextBox to = this.FindName("toTime") as TextBox;
-                timeTo = 1900;
+                timeTo = 1080;
                 TextBox s = this.FindName("speed") as TextBox;
-                simulationSpeed = int.Parse(s.Text);
-                main.Initialize(parkeringsPlasserArray, parkeringsPercentArray, amountOfCars, timeFrom, timeTo, simulationSpeed);
+                simulationSpeed = (int.Parse(s.Text) * 10);
+                this.Frame.Navigate(typeof(BlankPage1));
             }
             else
             {
