@@ -20,6 +20,8 @@ namespace Parkeringssimulering
         /// </summary>
         public Parkingspot Destination, originalDestination;
 
+        public int distanceDriven;
+
         public List<Parkingspot> visitedParkingspots = new List<Parkingspot>();
         /// <summary>
         /// The arrival from
@@ -74,6 +76,10 @@ namespace Parkeringssimulering
         public List<Parkingspot> getVisitedParkingspots()
         {
             return visitedParkingspots;
+        }
+        public void setDistanceDriven(int DistanceDriven)
+        {
+            this.distanceDriven = distanceDriven + DistanceDriven;
         }
     }
 }
