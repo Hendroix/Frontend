@@ -69,7 +69,6 @@ namespace Parkeringssimulering
         public void setDestination(Parkingspot ps)
         {
             originalDestination = Destination;
-            //visitedParkingspots.Add(ps);
             this.Destination = ps;
         }
         public List<Parkingspot> getVisitedParkingspots()

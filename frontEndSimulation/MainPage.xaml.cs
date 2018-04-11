@@ -55,7 +55,7 @@ namespace frontEndSimulation
             printArrayInfo();
             TextBlock percentage = this.FindName("percentage") as TextBlock;
             string percentagecheck = percentage.Text.ToString();
-            percentagecheck = percentagecheck.Remove(percentagecheck.Length -1);
+            percentagecheck = percentagecheck.Remove(percentagecheck.Length - 1);
             if (double.TryParse(percentagecheck, out double tmp) && tmp == 100)
             {
                 Debug.WriteLine("Nå skal simuleringen starte");
@@ -288,5 +288,41 @@ namespace frontEndSimulation
                 Debug.WriteLine(parkeringsPercentArrayPrint[i] + ": " + parkeringsPercentArray[i]);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            string clearString = button.Content.ToString();
+            double d = double.Parse(clearString.Remove(clearString.Length - 1));
+            reduceParkingSpots(1 - (d / 100));
+        }
+
+        private void reduceParkingSpots(double percentage)
+        {
+            TextBox p1 = this.FindName("pplass1") as TextBox;
+            p1.Text = ((int)(150 * percentage)).ToString();
+            TextBox p2 = this.FindName("pplass2") as TextBox;
+            p2.Text = ((int)(40 * percentage)).ToString();
+            TextBox p3 = this.FindName("pplass3") as TextBox;
+            p3.Text = ((int)(175 * percentage)).ToString();
+            TextBox p4 = this.FindName("pplass4") as TextBox;
+            p4.Text = ((int)(205 * percentage)).ToString();
+            TextBox p5 = this.FindName("pplass5") as TextBox;
+            p5.Text = ((int)(210 * percentage)).ToString();
+            TextBox p6 = this.FindName("pplass6") as TextBox;
+            p6.Text = ((int)(170 * percentage)).ToString();
+            TextBox p7 = this.FindName("pplass7") as TextBox;
+            p7.Text = ((int)(45 * percentage)).ToString();
+            TextBox p8 = this.FindName("pplass8") as TextBox;
+            p8.Text = ((int)(40 * percentage)).ToString();
+            TextBox p9 = this.FindName("pplass9") as TextBox;
+            p9.Text = ((int)(115 * percentage)).ToString();
+            TextBox p10 = this.FindName("pplass10") as TextBox;
+            p10.Text = ((int)(110 * percentage)).ToString();
+            TextBox p11 = this.FindName("pplass11") as TextBox;
+            p11.Text = ((int)(110 * percentage)).ToString();
+
+        }
+        
     }
 }

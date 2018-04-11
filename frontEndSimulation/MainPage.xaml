@@ -76,6 +76,17 @@
         <TextBox x:Name="toTime" InputScope="Number" FontSize="36" HorizontalAlignment="Left" Margin="980,220,0,0" Text="10:00" VerticalAlignment="Top" TextAlignment="Center" MaxLength="4" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
         <!-- Start Simulation -->
         <Button x:Name="startButton" Content="Simuler" HorizontalAlignment="Left" Margin="862,581,0,0" VerticalAlignment="Top" Width="200" Click="startButton_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="804,373,0,0" Text="The percentages need to be a total of 100%. We wil tell you here if you try to simulate without a 100%." TextWrapping="Wrap" VerticalAlignment="Top" Height="162" Width="298"/>
+        <TextBlock HorizontalAlignment="Left" Margin="792,437,0,0" Text="The percentages need to be a total of 100%. We wil tell you here if you try to simulate without a 100%." TextWrapping="Wrap" VerticalAlignment="Top" Height="132" Width="298"/>
+        <Button Content="10%" HorizontalAlignment="Left" Margin="808,335,0,0" VerticalAlignment="Top" Height="38" Width="49" Click="Button_Click"/>
+        <Button Content="20%" HorizontalAlignment="Left" Margin="862,335,0,0" VerticalAlignment="Top" Height="38" Width="49" Click="Button_Click"/>
+        <Button Content="30%" HorizontalAlignment="Left" Margin="916,335,0,0" VerticalAlignment="Top" Height="38" Width="49" Click="Button_Click"/>
+        <Button Content="40%" HorizontalAlignment="Left" Margin="970,335,0,0" VerticalAlignment="Top" Height="38" Width="49" Click="Button_Click"/>
+        <Button Content="50%" HorizontalAlignment="Left" Margin="1024,335,0,0" VerticalAlignment="Top" Height="38" Width="49" Click="Button_Click"/>
+        <Button Content="60%" HorizontalAlignment="Left" Margin="808,385,0,0" VerticalAlignment="Top" Height="38" Width="49" Click="Button_Click"/>
+        <Button Content="70%" HorizontalAlignment="Left" Margin="862,385,0,0" VerticalAlignment="Top" Height="38" Width="49" Click="Button_Click"/>
+        <Button Content="80%" HorizontalAlignment="Left" Margin="916,385,0,0" VerticalAlignment="Top" Height="38" Width="49" Click="Button_Click"/>
+        <Button Content="90%" HorizontalAlignment="Left" Margin="970,385,0,0" VerticalAlignment="Top" Height="38" Width="49" Click="Button_Click"/>
+        <Button Content="0%" HorizontalAlignment="Left" Margin="1024,385,0,0" VerticalAlignment="Top" Height="38" Width="49" Click="Button_Click"/>
+
     </Grid>
 </Page>

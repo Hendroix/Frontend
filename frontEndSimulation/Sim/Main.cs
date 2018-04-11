@@ -107,10 +107,7 @@ namespace Parkeringssimulering
             ParkingQueue[] parkingQueueArrayCheck = { e6South, tuneVeienNorth, tuneVeienNorth_1, tuneVeienSouth, gralumVeienNorth, gralumVeienNorth_1,
                 sykehusVeienNorth, sykehusVeienNorth_1, sykehusVeienNorth_2, sykehusVeienNorth_3, sykehusVeienNorth_4, sykehusVeienSouth, sykehusVeienSouth_1, sykehusVeienSouth_2,
                 sykehusVeienSouth_3, sykehusVeienSouth_4 };
-
-            //printTotalParkingInfo(parkingspotArray);
-            //returnStringContext += "\r\n";
-
+            
             //Defines the starting criterias
             currentSimTime = timeFrom;
             finalSimTime = timeTo;
@@ -118,7 +115,7 @@ namespace Parkeringssimulering
             currentlyMade = 0;
             //Uncomment this for a shit tun of cars to arrive
             totalAmountOfCarsCounter = 0;
-            totalAmountOfCars = 1096 - amountOfCars;
+            totalAmountOfCars = amountOfCars - amountOfCars;
             generateRandomNumbers();
             //Start of While simulation loop
             while (currentSimTime <= finalSimTime)
@@ -131,7 +128,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(2.93f);
-                        if (totalAmountOfCars < 88)
+                        if (totalAmountOfCars < (amountOfCars * 0.083))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -146,7 +143,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(0.8f);
-                        if (totalAmountOfCars < 136)
+                        if (totalAmountOfCars < (amountOfCars * 0.1241))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -161,7 +158,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(0.58f);
-                        if (totalAmountOfCars < 150)
+                        if (totalAmountOfCars < (amountOfCars * 0.1369))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -176,7 +173,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(2.15f);
-                        if (totalAmountOfCars < 292)
+                        if (totalAmountOfCars < (amountOfCars * 0.2664))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -191,7 +188,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(0.22f);
-                        if (totalAmountOfCars < 304)
+                        if (totalAmountOfCars < (amountOfCars * 0.2774))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -206,7 +203,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(2.25f);
-                        if (totalAmountOfCars < 385)
+                        if (totalAmountOfCars < (amountOfCars * 0.3513))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -221,7 +218,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(1.36f);
-                        if (totalAmountOfCars < 442)
+                        if (totalAmountOfCars < (amountOfCars * 0.4033))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -236,7 +233,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(1.58f);
-                        if (totalAmountOfCars < 480)
+                        if (totalAmountOfCars < (amountOfCars * 0.4380))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -251,7 +248,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(6.89f);
-                        if (totalAmountOfCars < 852)
+                        if (totalAmountOfCars < (amountOfCars * 0.7774))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -266,7 +263,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(0.7f);
-                        if (totalAmountOfCars < 894)
+                        if (totalAmountOfCars < (amountOfCars * 0.8157))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -281,7 +278,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(1.41f);
-                        if (totalAmountOfCars < 1021)
+                        if (totalAmountOfCars < (amountOfCars * 0.9316))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -296,7 +293,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(0.18f);
-                        if (totalAmountOfCars < 1037)
+                        if (totalAmountOfCars < (amountOfCars * 0.9462))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -311,7 +308,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(0.20f);
-                        if (totalAmountOfCars < 1068)
+                        if (totalAmountOfCars < (amountOfCars * 0.9745))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -326,7 +323,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(0.11f);
-                        if (totalAmountOfCars < 1080)
+                        if (totalAmountOfCars < (amountOfCars * 0.9854))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -341,7 +338,7 @@ namespace Parkeringssimulering
                     if (currentlyMade == 0)
                     {
                         int carsToBeMade = getArrivingCarsRandom(0.09f);
-                        if (totalAmountOfCars < 1096)
+                        if (totalAmountOfCars < (amountOfCars))
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
                             Task.Delay(delaySleepTime).Wait();
@@ -350,6 +347,7 @@ namespace Parkeringssimulering
                     }
                 }
                 //Traverse the parkingqueues and move cars that are in the queue.
+                for (int i = 0; i < 2; i++) { 
                 foreach (ParkingQueue pq in parkingQueueArrayCheck)
                 {
                     //Fra E6
@@ -701,7 +699,7 @@ namespace Parkeringssimulering
                         }
                     }
                     //Fra sykehusveienNord_4
-                    if (pq.name == sykehusVeienNorth_3.name && pq.carsInQueue.Count > 0)
+                    if (pq.name == sykehusVeienNorth_4.name && pq.carsInQueue.Count > 0)
                     {
                         Car c = (Car)pq.carsInQueue.Peek();
                         if (c.getTimeOfCreation() < currentSimTime && c.timeOfQueuing < currentSimTime)
@@ -938,6 +936,7 @@ namespace Parkeringssimulering
                         }
                     }
 
+                }
                 }
                 //End of while simulation loop
                 returnStringContext += "\r\n";
@@ -1298,6 +1297,62 @@ namespace Parkeringssimulering
             return timeString;
         }
         /// <summary>
+        /// Translates the intervals to time.
+        /// </summary>
+        /// <param name="intervals">The intervals.</param>
+        /// <returns></returns>
+        private static string translateIntervalsToTime(int intervals)
+        {
+            string timeString = "";
+            int tmpTime = intervals;
+            if (intervals < 360)
+            {
+                timeString += "00:";
+                tmpTime = tmpTime / 6;
+                if (tmpTime < 10)
+                {
+                    timeString += "0" + tmpTime;
+                }
+                else
+                {
+                    timeString += tmpTime;
+                }
+            }
+            if (intervals < 720 && intervals >= 360)
+            {
+                timeString += "01:";
+                tmpTime = (tmpTime - 360) / 6;
+                if (tmpTime < 10)
+                {
+                    timeString += "0" + tmpTime;
+                }
+                else
+                {
+                    timeString += tmpTime;
+                }
+
+            }
+            if (intervals < 1080 && intervals >= 720)
+            {
+                timeString += "02:";
+                tmpTime = (tmpTime - 720) / 6;
+                if (tmpTime < 10)
+                {
+                    timeString += "0" + tmpTime;
+                }
+                else
+                {
+                    timeString += tmpTime;
+                }
+
+            }
+            if (intervals >= 1080)
+            {
+                timeString += "03:00";
+            }
+            return timeString;
+        }
+        /// <summary>
         /// Prints information about all the parkingspots you feed the method.
         /// </summary>
         /// <param name="array">The array of parkingspot you want stats printed from.</param>
@@ -1337,7 +1392,13 @@ namespace Parkeringssimulering
             returnStringContext += "\r\n";
             returnStringContext += ("Total cars made: " + totalAmountOfCarsCounter);
             returnStringContext += "\r\n";
+            returnStringContext += ("Total cars returned home: " + (totalAmountOfCarsCounter - takenSpaces));
+            returnStringContext += "\r\n";
         }
+        /// <summary>
+        /// Prints the total parking information car details.
+        /// </summary>
+        /// <param name="array">The array.</param>
         static void printTotalParkingInfoCarDetails(Parkingspot[] array)
         {
             //\r\n means spacing or line split
@@ -1354,8 +1415,8 @@ namespace Parkeringssimulering
                     totalDistanceDriven += c.distanceDriven;
                 }
                 returnStringContext += "Biler parkert her: " + p.listOfCars.Count + "/" + p.totalParkingSpaces + "\r\n";
-                returnStringContext += "Gjennomsnittlig tid i kø: " + (totalWaitingTime / p.listOfCars.Count) + "\r\n";
-                returnStringContext += "Total tid i kø: " + totalWaitingTime + "\r\n";
+                returnStringContext += "Gjennomsnittlig tid i kø: " + translateIntervalsToTime((totalWaitingTime / p.listOfCars.Count)) + "\r\n";
+                returnStringContext += "Total tid i kø: " + translateIntervalsToTime(totalWaitingTime) + "\r\n";
                 returnStringContext += "Gjennomsnittlig distanse kjørt: " + (totalDistanceDriven / p.listOfCars.Count) + " meter" + "\r\n";
                 returnStringContext += "Total distance kjørt: " + totalDistanceDriven + " meter" + "\r\n";
                 returnStringContext += "\r\n";
@@ -1369,9 +1430,9 @@ namespace Parkeringssimulering
         {
             foreach (ParkingQueue queue in pq)
             {
+                /*
                 returnStringContext += (queue.name + "  Biler i min kø: " + queue.carsInQueue.Count);
                 returnStringContext += "\r\n";
-                /*
                 if (queue.carsInQueue.Count > 0)
                 {
                     foreach (Car c in queue.carsInQueue)
