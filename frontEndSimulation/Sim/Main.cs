@@ -1340,39 +1340,26 @@ namespace Parkeringssimulering
         }
         static void printTotalParkingInfoCarDetails(Parkingspot[] array)
         {
-            //Clearing the varaible before every print
-            maxParkingspots = 0;
-            takenSpaces = 0;
-            freeSpaces = 0;
             //\r\n means spacing or line split
             returnStringContext += "\r\n" + "Parkeringsplass oversikt: ";
             returnStringContext += "\r\n";
             foreach (Parkingspot p in array)
             {
-                if (p.listOfCars.Count > p.totalParkingSpaces)
+                returnStringContext += p.name + "\r\n";
+                int totalWaitingTime = 0;
+                int totalDistanceDriven = 0;
+                foreach (Car c in p.listOfCars)
                 {
-                    returnStringContext += (p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces + " TO MANY CARS");
-                    returnStringContext += "\r\n";
+                    totalWaitingTime += (c.timeOfParking - c.timeOfCreation);
+                    totalDistanceDriven += c.distanceDriven;
                 }
-                else
-                {
-                    returnStringContext += (p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces);
-                    returnStringContext += "\r\n";
-                }
-                maxParkingspots += p.getTotalParkingSpaces();
-                takenSpaces += p.getTakenSpaces();
+                returnStringContext += "Biler parkert her: " + p.listOfCars.Count + "/" + p.totalParkingSpaces + "\r\n";
+                returnStringContext += "Gjennomsnittlig tid i kø: " + (totalWaitingTime / p.listOfCars.Count) + "\r\n";
+                returnStringContext += "Total tid i kø: " + totalWaitingTime + "\r\n";
+                returnStringContext += "Gjennomsnittlig distanse kjørt: " + (totalDistanceDriven / p.listOfCars.Count) + " meter" + "\r\n";
+                returnStringContext += "Total distance kjørt: " + totalDistanceDriven + " meter" + "\r\n";
+                returnStringContext += "\r\n";
             }
-            returnStringContext += "\r\n";
-            returnStringContext += "Total oversikt: ";
-            returnStringContext += "\r\n";
-            returnStringContext += ("Totalt antall parkeringsplasser:          " + maxParkingspots);
-            returnStringContext += "\r\n";
-            returnStringContext += ("Totalt antall opptatte parkeringsplasser: " + takenSpaces);
-            returnStringContext += "\r\n";
-            returnStringContext += ("Totalt antall ledige parkeringsplasser:   " + (maxParkingspots - takenSpaces));
-            returnStringContext += "\r\n";
-            returnStringContext += ("Total cars made: " + totalAmountOfCarsCounter);
-            returnStringContext += "\r\n";
         }
         /// <summary>
         /// Prints the remaining cars in queue.
