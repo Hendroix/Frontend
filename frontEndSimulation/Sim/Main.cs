@@ -1401,6 +1401,8 @@ namespace Parkeringssimulering
         /// <param name="array">The array.</param>
         static void printTotalParkingInfoCarDetails(Parkingspot[] array)
         {
+            int totalDistanceAllCars = 0;
+            int totalWaitingTimeAllCars = 0;
             //\r\n means spacing or line split
             returnStringContext += "\r\n" + "Parkeringsplass oversikt: ";
             returnStringContext += "\r\n";
@@ -1420,7 +1422,13 @@ namespace Parkeringssimulering
                 returnStringContext += "Gjennomsnittlig distanse kjørt: " + (totalDistanceDriven / p.listOfCars.Count) + " meter" + "\r\n";
                 returnStringContext += "Total distance kjørt: " + totalDistanceDriven + " meter" + "\r\n";
                 returnStringContext += "\r\n";
+
+                totalDistanceAllCars += totalDistanceDriven;
+                totalWaitingTimeAllCars += totalWaitingTime;
             }
+            returnStringContext += "Total distance kjørt for alle biler: " + (totalDistanceAllCars / 1000) + " Km";
+            returnStringContext += "\r\n";
+            returnStringContext += "Total tid brukt på alle biler: " + translateIntervalsToTime(totalWaitingTimeAllCars);
         }
         /// <summary>
         /// Prints the remaining cars in queue.
@@ -1430,7 +1438,6 @@ namespace Parkeringssimulering
         {
             foreach (ParkingQueue queue in pq)
             {
-                /*
                 returnStringContext += (queue.name + "  Biler i min kø: " + queue.carsInQueue.Count);
                 returnStringContext += "\r\n";
                 if (queue.carsInQueue.Count > 0)
@@ -1442,7 +1449,6 @@ namespace Parkeringssimulering
                         returnStringContext += "\r\n";
                     }
                 }
-                */
             }
 
         }
