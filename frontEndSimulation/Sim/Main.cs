@@ -13,41 +13,14 @@ namespace Parkeringssimulering
     /// </summary>
     public class main
     {
-        /// <summary>
-        /// The return string context
-        /// </summary>
         public static string returnStringContext;
-        /// <summary>
-        /// The random
-        /// </summary>
         public static Random random;
-        /// <summary>
-        /// The s random
-        /// </summary>
         public static Random s_Random = new Random();
-        /// <summary>
-        /// The random array
-        /// </summary>
         public static int[] randomArray = new int[1000000], randomArray3 = new int[1000000];
-        /// <summary>
-        /// The random array2
-        /// </summary>
         public static double[] randomArray2 = new double[1000000];
-        /// <summary>
-        /// The random pointer
-        /// </summary>
         public static int randomPointer = 1, randomPointer2 = 1, randomPointer3 = 1;
-        /// <summary>
-        /// The inspiria
-        /// </summary>
         public static Parkingspot inspiria, inspiriaBak, superland, quality, kiwi, politi, caverion, k5, tuneSenter, adeccoAndIf, fagforbundet;
-        /// <summary>
-        /// The kiwi
-        /// </summary>
         public static int Kiwi, Inspiria, InspiriaBak, Superland, Quality, Politi, Caverion, K5, TuneSenter, AdeccoAndIf, Fagforbundet;
-        /// <summary>
-        /// The arriving cars
-        /// </summary>
         public static int arrivingCars, maxParkingspots, freeSpaces, takenSpaces, totalAmountOfCars, currentSimTime, finalSimTime, counldtFindParking, delaySleepTime, currentlyMade, totalAmountOfCarsCounter;
         /// <summary>
         /// Initializes the specified parking spots.
@@ -64,30 +37,30 @@ namespace Parkeringssimulering
             returnStringContext = "";
             //Trafic queues.
             //E6
-            Queue e6Queue = new Queue(); // 100 Metter
+            Queue e6Queue = new Queue(); 
 
             //Sykehusveien North
-            Queue sykehusVeienQueueNorth = new Queue(); //130 Meter
-            Queue sykehusVeienQueueNorth_1 = new Queue(); // 50 Meter
-            Queue sykehusVeienQueueNorth_2 = new Queue(); // 100 Metter
-            Queue sykehusVeienQueueNorth_3 = new Queue(); // 100 Metter
-            Queue sykehusVeienQueueNorth_4 = new Queue(); // 100 Metter
+            Queue sykehusVeienQueueNorth = new Queue(); 
+            Queue sykehusVeienQueueNorth_1 = new Queue(); 
+            Queue sykehusVeienQueueNorth_2 = new Queue(); 
+            Queue sykehusVeienQueueNorth_3 = new Queue(); 
+            Queue sykehusVeienQueueNorth_4 = new Queue();
             //Sykehusveien South
-            Queue sykehusVeienQueueSouth = new Queue(); // 100 Metter
-            Queue sykehusVeienQueueSouth_1 = new Queue(); // 100 Metter
-            Queue sykehusVeienQueueSouth_2 = new Queue(); // 100 Metter
-            Queue sykehusVeienQueueSouth_3 = new Queue(); // 50 Metter
-            Queue sykehusVeienQueueSouth_4 = new Queue(); // 130 Metter
+            Queue sykehusVeienQueueSouth = new Queue(); 
+            Queue sykehusVeienQueueSouth_1 = new Queue();
+            Queue sykehusVeienQueueSouth_2 = new Queue();
+            Queue sykehusVeienQueueSouth_3 = new Queue(); 
+            Queue sykehusVeienQueueSouth_4 = new Queue();
 
             //Tuneveien North
-            Queue tuneVeienQueueNorth = new Queue(); // 100 Metter
-            Queue tuneVeienQueueNorth_1 = new Queue(); // 100 Metter
+            Queue tuneVeienQueueNorth = new Queue();
+            Queue tuneVeienQueueNorth_1 = new Queue();
             //Tuneveien South
-            Queue tuneVeienQueueSouth = new Queue(); // 100 Metter
+            Queue tuneVeienQueueSouth = new Queue();
 
             //Grålumveien North
-            Queue grålumVeienQueueNorth = new Queue(); // 100 Metter
-            Queue grålumVeienQueueNorth_1 = new Queue(); // 100 Metter
+            Queue grålumVeienQueueNorth = new Queue();
+            Queue grålumVeienQueueNorth_1 = new Queue();
 
             //Parkingspots that are avaliable to park on. There are some descrepencies here because we need more parkingspots to meet the 1200 cars that are arriving in this simulation.
             inspiria = new Parkingspot("Inspiria", parkingSpots[0], 0);
@@ -150,7 +123,6 @@ namespace Parkeringssimulering
             //Start of While simulation loop
             while (currentSimTime <= finalSimTime)
             {
-                Debug.WriteLine("Runde: " + currentSimTime + " Tid: " + calculateTimeFromIntervals(currentSimTime));
                 returnStringContext += ("Runde: " + currentSimTime + " Tid: " + calculateTimeFromIntervals(currentSimTime));
                 //Intervall round 1
                 if (currentSimTime <= 30)
@@ -162,7 +134,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 88)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -178,7 +149,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 136)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -194,7 +164,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 150)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -210,7 +179,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 292)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -226,7 +194,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 304)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -242,7 +209,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 385)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -258,7 +224,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 442)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -274,7 +239,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 480)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -290,7 +254,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 852)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -306,7 +269,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 894)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -322,7 +284,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 1021)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -338,7 +299,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 1037)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -354,7 +314,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 1068)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -370,7 +329,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 1080)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -386,7 +344,6 @@ namespace Parkeringssimulering
                         if (totalAmountOfCars < 1096)
                         {
                             createAndGivePurposeToCars(carsToBeMade, currentlyMade, parkingQueueArrayArrivingCars);
-                            Debug.WriteLine("");
                             Task.Delay(delaySleepTime).Wait();
                         }
                         returnStringContext += "Biler lagd: " + (totalAmountOfCars - currentlyMade) + "\r\n";
@@ -410,7 +367,6 @@ namespace Parkeringssimulering
                                 tuneVeienSouth.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra E6 til " + tuneVeienSouth.name);
                             }
                             //all annen trafikk fra E6 skal til sykehusveien
                             else if (sykehusVeienNorth.checkIfFree() == true)
@@ -419,7 +375,6 @@ namespace Parkeringssimulering
                                 sykehusVeienNorth.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra E6 til " + sykehusVeienNorth.name);
                             }
                         }
                     }
@@ -438,12 +393,10 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             else if (ps.name == kiwi.name && !ps.Free())
                             {
                                 c.setDestination(quality);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             else if (tuneVeienNorth_1.checkIfFree() == true)
                             {
@@ -451,7 +404,6 @@ namespace Parkeringssimulering
                                 tuneVeienNorth_1.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra TuneveienSør til " + tuneVeienNorth_1.name);
                             }
                         }
                     }
@@ -470,12 +422,10 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             else if (ps.name == kiwi.name && !ps.Free())
                             {
                                 c.setDestination(quality);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             else if (tuneVeienNorth_1.checkIfFree() == true)
                             {
@@ -483,7 +433,6 @@ namespace Parkeringssimulering
                                 tuneVeienNorth_1.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra TuneveienNord til " + tuneVeienNorth_1.name);
                             }
                         }
                     }
@@ -502,7 +451,6 @@ namespace Parkeringssimulering
                                 sykehusVeienNorth.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + pq.name + " til " + sykehusVeienNorth.name + " And i have travelled " + c.distanceDriven);
                             }
                         }
                     }
@@ -521,7 +469,6 @@ namespace Parkeringssimulering
                                 gralumVeienNorth_1.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + gralumVeienNorth.name + " til " + gralumVeienNorth_1.name);
                             }
                         }
                     }
@@ -540,7 +487,6 @@ namespace Parkeringssimulering
                                 tuneVeienSouth.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Til sykehusveien
                             else if (sykehusVeienNorth.checkIfFree() == true)
@@ -549,7 +495,6 @@ namespace Parkeringssimulering
                                 sykehusVeienNorth.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + gralumVeienNorth_1.name + " til " + sykehusVeienNorth.name);
                             }
                         }
                     }
@@ -568,13 +513,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om politiet er fullt
                             else if (ps.name == politi.name && !ps.Free())
                             {
                                 c.setDestination(tuneSenter);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til Quality
                             else if (ps.name == quality.name && ps.Free())
@@ -583,13 +526,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om Quality er fullt
                             else if (ps.name == quality.name && !ps.Free())
                             {
                                 c.setDestination(superland);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til Superland
                             else if (ps.name == superland.name && ps.Free())
@@ -598,13 +539,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om Superland er fult
                             else if (ps.name == superland.name && !ps.Free())
                             {
                                 c.setDestination(inspiria);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til If og Adecco
                             else if (ps.name == adeccoAndIf.name && ps.Free())
@@ -613,13 +552,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om if og Adecco er fullt
                             else if (ps.name == adeccoAndIf.name && !ps.Free())
                             {
                                 c.setDestination(politi);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til Tunesenteret
                             else if (ps.name == tuneSenter.name && ps.Free())
@@ -628,13 +565,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om Tunesenteret er fullt
                             else if (ps.name == tuneSenter.name && !ps.Free())
                             {
                                 c.setDestination(fagforbundet);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til Fagforbundet
                             else if (ps.name == fagforbundet.name && ps.Free())
@@ -643,13 +578,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om Fagforbundet er fullt
                             else if (ps.name == fagforbundet.name && !ps.Free())
                             {
                                 c.setDestination(kiwi);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Send videre til SykehusveienNorth_1
                             else if (sykehusVeienNorth_1.checkIfFree() == true)
@@ -658,7 +591,6 @@ namespace Parkeringssimulering
                                 sykehusVeienNorth_1.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(130);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienNorth.name + " til " + sykehusVeienNorth_1.name);
                             }
                         }
                     }
@@ -677,13 +609,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(50);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om inspiria er fullt
                             else if (ps.name == inspiria.name && !ps.Free())
                             {
                                 c.setDestination(inspiriaBak);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Send videre til sykehusVeienNorth_2
                             else if (sykehusVeienNorth_2.checkIfFree() == true)
@@ -692,7 +622,6 @@ namespace Parkeringssimulering
                                 sykehusVeienNorth_2.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(50);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienNorth_1.name + " til " + sykehusVeienNorth_2.name);
                             }
                         }
                     }
@@ -711,7 +640,6 @@ namespace Parkeringssimulering
                                 sykehusVeienNorth_3.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienNorth_2.name + " til " + sykehusVeienNorth_3.name);
                             }
                         }
                     }
@@ -730,13 +658,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om inspiria bak er fullt
                             else if (ps.name == inspiriaBak.name && !ps.Free())
                             {
                                 c.setDestination(k5);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til Caverion
                             else if (ps.name == caverion.name && ps.Free())
@@ -745,13 +671,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om Caverion er fullt
                             else if (ps.name == caverion.name && !ps.Free())
                             {
                                 c.setDestination(adeccoAndIf);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til k5
                             else if (ps.name == k5.name && ps.Free())
@@ -760,13 +684,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om k5 er fullt
                             else if (ps.name == k5.name && !ps.Free())
                             {
                                 c.setDestination(caverion);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Send videre til sykehusveienNorth_4
                             else if (sykehusVeienNorth_4.checkIfFree() == true)
@@ -775,7 +697,6 @@ namespace Parkeringssimulering
                                 sykehusVeienNorth_4.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienNorth_3.name + " til " + sykehusVeienNorth_4.name);
                             }
                         }
                     }
@@ -793,7 +714,6 @@ namespace Parkeringssimulering
                                 sykehusVeienSouth.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienNorth_4.name + " til " + sykehusVeienSouth.name);
                             }
                         }
                     }
@@ -812,13 +732,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om inspiria bak er fullt
                             else if (ps.name == inspiriaBak.name && !ps.Free())
                             {
                                 c.setDestination(k5);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til Caverion
                             else if (ps.name == caverion.name && ps.Free())
@@ -827,13 +745,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om caverion er fullt
                             else if (ps.name == caverion.name && !ps.Free())
                             {
                                 c.setDestination(adeccoAndIf);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til k5
                             else if (ps.name == k5.name && ps.Free())
@@ -842,13 +758,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om k5 er fullt
                             else if (ps.name == inspiriaBak.name && !ps.Free())
                             {
                                 c.setDestination(caverion);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Send videre til sykehusveienSouth_1
                             else if (sykehusVeienSouth_1.checkIfFree() == true)
@@ -857,7 +771,6 @@ namespace Parkeringssimulering
                                 sykehusVeienSouth_1.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienSouth.name + " til " + sykehusVeienSouth_1.name);
                             }
                         }
                     }
@@ -875,7 +788,6 @@ namespace Parkeringssimulering
                                 sykehusVeienSouth_2.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienSouth_1.name + " til " + sykehusVeienSouth_2.name);
                             }
 
                         }
@@ -895,13 +807,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om inspiria er fullt
                             else if (ps.name == inspiria.name && !ps.Free())
                             {
                                 c.setDestination(quality);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Send videre til sykehusveienSouth_3
                             else if (sykehusVeienSouth_3.checkIfFree() == true)
@@ -910,7 +820,6 @@ namespace Parkeringssimulering
                                 sykehusVeienSouth_3.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienSouth_2.name + " til " + sykehusVeienSouth_3.name);
                             }
                         }
                     }
@@ -929,13 +838,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om politiet er fullt
                             else if (ps.name == politi.name && !ps.Free())
                             {
                                 c.setDestination(tuneSenter);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til Quality
                             else if (ps.name == quality.name && ps.Free())
@@ -944,13 +851,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om Quality er fullt
                             else if (ps.name == quality.name && !ps.Free())
                             {
                                 c.setDestination(superland);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til Superland
                             else if (ps.name == superland.name && ps.Free())
@@ -959,13 +864,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om Superland er fult
                             else if (ps.name == superland.name && !ps.Free())
                             {
                                 c.setDestination(inspiria);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til If og Adecco
                             else if (ps.name == adeccoAndIf.name && ps.Free())
@@ -974,13 +877,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om if og Adecco er fullt
                             else if (ps.name == adeccoAndIf.name && !ps.Free())
                             {
                                 c.setDestination(politi);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til Tunesenteret
                             else if (ps.name == tuneSenter.name && ps.Free())
@@ -989,13 +890,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om Tunesenteret er fullt
                             else if (ps.name == tuneSenter.name && !ps.Free())
                             {
                                 c.setDestination(fagforbundet);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Til Fagforbundet
                             else if (ps.name == fagforbundet.name && ps.Free())
@@ -1004,13 +903,11 @@ namespace Parkeringssimulering
                                 ps.listOfCars.Add(c);
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Har parkert på " + ps.name + ", her er det " + ps.getTakenSpaces() + "/" + ps.totalParkingSpaces);
                             }
                             //Om Fagforbundet er fullt
                             else if (ps.name == fagforbundet.name && !ps.Free())
                             {
                                 c.setDestination(kiwi);
-                                Debug.WriteLine(c.id + " Skal til ->" + c.originalDestination.name + "Men er fult, parkerer på " + c.Destination.name + " isteden.");
                             }
                             //Send videre til sykehusveienSouth_4
                             else if (sykehusVeienSouth_4.checkIfFree() == true)
@@ -1019,7 +916,6 @@ namespace Parkeringssimulering
                                 sykehusVeienNorth_4.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra " + sykehusVeienNorth_3.name + " til " + sykehusVeienNorth_4.name);
                             }
                         }
                     }
@@ -1038,7 +934,6 @@ namespace Parkeringssimulering
                                 tuneVeienSouth.carsInQueue.Enqueue(c);
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(130);
-                                Debug.WriteLine("Bil " + c.id + " Flyttet seg fra E6 til " + tuneVeienSouth.name);
                             }
                         }
                     }
@@ -1050,6 +945,7 @@ namespace Parkeringssimulering
             }
             //Simulation ended
             printTotalParkingInfo(parkingspotArray);
+            printTotalParkingInfoCarDetails(parkingspotArray);
             returnStringContext += "\r\n";
             printRemainingCarsInQueue(parkingQueueArrayCheck);
             //send back the simulation data to the MainPage frontend
@@ -1127,7 +1023,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, inspiria, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 Inspiria++;
             }
@@ -1135,7 +1030,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, inspiriaBak, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 InspiriaBak++;
             }
@@ -1143,7 +1037,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, superland, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 Superland++;
             }
@@ -1151,7 +1044,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, quality, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 Quality++;
             }
@@ -1159,7 +1051,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, kiwi, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 Kiwi++;
             }
@@ -1167,7 +1058,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, politi, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 Politi++;
             }
@@ -1175,7 +1065,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, caverion, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 Caverion++;
             }
@@ -1183,7 +1072,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, k5, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 K5++;
             }
@@ -1191,7 +1079,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, tuneSenter, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 TuneSenter++;
             }
@@ -1199,7 +1086,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, adeccoAndIf, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 AdeccoAndIf++;
             }
@@ -1207,7 +1093,6 @@ namespace Parkeringssimulering
             {
                 Car car = new Car(randomPointer, fagforbundet, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
-                Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                 randomPointer++;
                 Fagforbundet++;
             }
@@ -1217,7 +1102,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, inspiria, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     Inspiria++;
                 }
@@ -1225,7 +1109,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, inspiriaBak, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     InspiriaBak++;
                 }
@@ -1233,7 +1116,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, superland, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     Superland++;
                 }
@@ -1241,7 +1123,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, quality, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + queuespot.carsInQueue.Count + " " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     Quality++;
                 }
@@ -1249,7 +1130,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, kiwi, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     Kiwi++;
                 }
@@ -1257,7 +1137,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, politi, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     Politi++;
                 }
@@ -1265,7 +1144,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, caverion, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     Caverion++;
                 }
@@ -1273,7 +1151,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, k5, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     K5++;
                 }
@@ -1281,7 +1158,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, tuneSenter, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     TuneSenter++;
                 }
@@ -1289,7 +1165,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, adeccoAndIf, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     AdeccoAndIf++;
                 }
@@ -1297,7 +1172,6 @@ namespace Parkeringssimulering
                 {
                     Car car = new Car(randomPointer, fagforbundet, queuespot, currentSimTime);
                     placeInQueue(queuespot, car);
-                    Debug.WriteLine(queuespot.name + ": " + "Car: " + car.id + " " + car.Destination.name);
                     randomPointer++;
                     Fagforbundet++;
                 }
@@ -1327,8 +1201,8 @@ namespace Parkeringssimulering
         private static ParkingQueue getQueue(ParkingQueue[] parkingQueueArray)
         {
             int chance = randomArray3[randomPointer3];
-            randomPointer3++;
             ParkingQueue queuespot = parkingQueueArray[chance];
+            randomPointer3++;
             return queuespot;
 
         }
@@ -1356,7 +1230,7 @@ namespace Parkeringssimulering
                 {
                     arrivingCars++;
                     randomPointer2++;
-                    //chance = chance * 0.5f;
+                    chance = chance * 0.5f;
                 }
                 else
                 {
@@ -1433,47 +1307,71 @@ namespace Parkeringssimulering
             maxParkingspots = 0;
             takenSpaces = 0;
             freeSpaces = 0;
-
-            Debug.WriteLine("");
-            //Dollar Sign means spacing or line split
+            //\r\n means spacing or line split
             returnStringContext += "\r\n";
-            Debug.WriteLine("Parkeringsplass oversikt:");
             returnStringContext += "Parkeringsplass oversikt: ";
             returnStringContext += "\r\n";
             foreach (Parkingspot p in array)
             {
                 if (p.listOfCars.Count > p.totalParkingSpaces)
                 {
-                    Debug.WriteLine(p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces + " TO MANY CARS");
                     returnStringContext += (p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces + " TO MANY CARS");
                     returnStringContext += "\r\n";
                 }
                 else
                 {
-                    Debug.WriteLine(p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces);
                     returnStringContext += (p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces);
                     returnStringContext += "\r\n";
                 }
                 maxParkingspots += p.getTotalParkingSpaces();
                 takenSpaces += p.getTakenSpaces();
             }
-            Debug.WriteLine("");
             returnStringContext += "\r\n";
-            Debug.WriteLine("Total oversikt:");
             returnStringContext += "Total oversikt: ";
             returnStringContext += "\r\n";
-            Debug.WriteLine("Totalt antall parkeringsplasser:          " + maxParkingspots);
             returnStringContext += ("Totalt antall parkeringsplasser:          " + maxParkingspots);
             returnStringContext += "\r\n";
-            Debug.WriteLine("Totalt antall opptatte parkeringsplasser: " + takenSpaces);
             returnStringContext += ("Totalt antall opptatte parkeringsplasser: " + takenSpaces);
             returnStringContext += "\r\n";
-            Debug.WriteLine("Totalt antall ledige parkeringsplasser:   " + (maxParkingspots - takenSpaces));
             returnStringContext += ("Totalt antall ledige parkeringsplasser:   " + (maxParkingspots - takenSpaces));
             returnStringContext += "\r\n";
-            Debug.WriteLine("Total cars made: " + totalAmountOfCarsCounter);
             returnStringContext += ("Total cars made: " + totalAmountOfCarsCounter);
-            Debug.WriteLine("");
+            returnStringContext += "\r\n";
+        }
+        static void printTotalParkingInfoCarDetails(Parkingspot[] array)
+        {
+            //Clearing the varaible before every print
+            maxParkingspots = 0;
+            takenSpaces = 0;
+            freeSpaces = 0;
+            //\r\n means spacing or line split
+            returnStringContext += "\r\n" + "Parkeringsplass oversikt: ";
+            returnStringContext += "\r\n";
+            foreach (Parkingspot p in array)
+            {
+                if (p.listOfCars.Count > p.totalParkingSpaces)
+                {
+                    returnStringContext += (p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces + " TO MANY CARS");
+                    returnStringContext += "\r\n";
+                }
+                else
+                {
+                    returnStringContext += (p.name + ": " + p.listOfCars.Count + "/" + p.totalParkingSpaces);
+                    returnStringContext += "\r\n";
+                }
+                maxParkingspots += p.getTotalParkingSpaces();
+                takenSpaces += p.getTakenSpaces();
+            }
+            returnStringContext += "\r\n";
+            returnStringContext += "Total oversikt: ";
+            returnStringContext += "\r\n";
+            returnStringContext += ("Totalt antall parkeringsplasser:          " + maxParkingspots);
+            returnStringContext += "\r\n";
+            returnStringContext += ("Totalt antall opptatte parkeringsplasser: " + takenSpaces);
+            returnStringContext += "\r\n";
+            returnStringContext += ("Totalt antall ledige parkeringsplasser:   " + (maxParkingspots - takenSpaces));
+            returnStringContext += "\r\n";
+            returnStringContext += ("Total cars made: " + totalAmountOfCarsCounter);
             returnStringContext += "\r\n";
         }
         /// <summary>
@@ -1484,9 +1382,9 @@ namespace Parkeringssimulering
         {
             foreach (ParkingQueue queue in pq)
             {
-                Debug.WriteLine(queue.name + "  Biler i min kø: " + queue.carsInQueue.Count);
                 returnStringContext += (queue.name + "  Biler i min kø: " + queue.carsInQueue.Count);
                 returnStringContext += "\r\n";
+                /*
                 if (queue.carsInQueue.Count > 0)
                 {
                     foreach (Car c in queue.carsInQueue)
@@ -1496,38 +1394,9 @@ namespace Parkeringssimulering
                         returnStringContext += "\r\n";
                     }
                 }
+                */
             }
 
-        }
-        /// <summary>
-        /// Determines whether [has tried parking at] [the specified c].
-        /// </summary>
-        /// <param name="c">The c.</param>
-        /// <param name="visitedPS">The visited ps.</param>
-        /// <returns>
-        ///   <c>true</c> if [has tried parking at] [the specified c]; otherwise, <c>false</c>.
-        /// </returns>
-        static bool hasTriedParkingAt(Car c, Parkingspot visitedPS)
-        {
-            foreach (Parkingspot ps in c.visitedParkingspots)
-            {
-                if (ps == visitedPS)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        static Parkingspot findEmptyParkingspot(Parkingspot[] psa)
-        {
-            foreach(Parkingspot p in psa)
-            {
-                if (p.freeSpaces > 0)
-                {
-                    return p;
-                }
-            }
-            return null;
         }
     }
 }

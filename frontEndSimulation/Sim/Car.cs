@@ -28,7 +28,7 @@ namespace Parkeringssimulering
         /// <summary>
         /// The time of parking
         /// </summary>
-        public int timeOfParking, timeOfCreation;
+        public int timeOfParking, timeOfCreation, distanceDriven;
         public double timeOfQueuing;
 
         /// <summary>
@@ -44,6 +44,7 @@ namespace Parkeringssimulering
             this.arrivalFrom = arrivalFrom;
             this.timeOfCreation = timeOfCreation;
             this.timeOfQueuing = timeOfCreation;
+            this.distanceDriven = 0;
         }
         /// <summary>
         /// Gets the time of parking.
@@ -74,6 +75,10 @@ namespace Parkeringssimulering
         public List<Parkingspot> getVisitedParkingspots()
         {
             return visitedParkingspots;
+        }
+        public void setDistanceDriven(int d)
+        {
+            distanceDriven += d;
         }
     }
 }
