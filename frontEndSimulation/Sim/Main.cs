@@ -1305,50 +1305,31 @@ namespace Parkeringssimulering
         {
             string timeString = "";
             int tmpTime = intervals;
-            if (intervals < 360)
+            int[] timeIntervals = { 0,360,720,1080,1440,1800,2160,2520,2880,3240,3600,3960,4320,4680,5040,5400,5760,6120,6480,6840,7200,8560,7920,8280,8640};
+            for(int i = 1; i < timeIntervals.Length; i++)
             {
-                timeString += "00:";
-                tmpTime = tmpTime / 6;
-                if (tmpTime < 10)
+                if (intervals < timeIntervals[i] && intervals >= timeIntervals[i-1])
                 {
-                    timeString += "0" + tmpTime;
-                }
-                else
-                {
-                    timeString += tmpTime;
-                }
-            }
-            if (intervals < 720 && intervals >= 360)
-            {
-                timeString += "01:";
-                tmpTime = (tmpTime - 360) / 6;
-                if (tmpTime < 10)
-                {
-                    timeString += "0" + tmpTime;
-                }
-                else
-                {
-                    timeString += tmpTime;
-                }
+                    if (i < 10)
+                    {
+                        timeString += "0" + (i-1) + ":";
+                        tmpTime = (tmpTime - (timeIntervals[i - 1])) / 6;
+                    }
+                    else
+                    {
+                        timeString += (i-1) + ":";
+                        tmpTime = (tmpTime - (timeIntervals[i - 1])) / 6;
 
-            }
-            if (intervals < 1080 && intervals >= 720)
-            {
-                timeString += "02:";
-                tmpTime = (tmpTime - 720) / 6;
-                if (tmpTime < 10)
-                {
-                    timeString += "0" + tmpTime;
+                    }
+                    if(tmpTime < 10)
+                    {
+                        timeString += "0" + tmpTime;
+                    }
+                    else
+                    {
+                        timeString += tmpTime;
+                    }
                 }
-                else
-                {
-                    timeString += tmpTime;
-                }
-
-            }
-            if (intervals >= 1080)
-            {
-                timeString += "03:00";
             }
             return timeString;
         }
