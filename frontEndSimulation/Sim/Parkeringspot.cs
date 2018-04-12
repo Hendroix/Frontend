@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Parkeringssimulering
 {
     /// <summary>
-    /// 
+    /// A Parkingspot
     /// </summary>
     public class Parkingspot
     {
@@ -24,7 +24,6 @@ namespace Parkeringssimulering
         /// The list of cars that are parked in this parkingspot.
         /// </summary>
         public ArrayList listOfCars = new ArrayList();
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Parkingspot" /> class.
         /// </summary>
@@ -47,7 +46,7 @@ namespace Parkeringssimulering
             return listOfCars.Count;
         }
         /// <summary>
-        /// Gets the free parkingspaces.
+        /// Gets the amount of free parkingspaces.
         /// </summary>
         /// <returns></returns>
         public int getFreeSpaces()
@@ -55,7 +54,7 @@ namespace Parkeringssimulering
             return freeSpaces;
         }
         /// <summary>
-        /// Gets the total parkingspaces.
+        /// Gets the total amount of parkingspaces.
         /// </summary>
         /// <returns></returns>
         public int getTotalParkingSpaces()

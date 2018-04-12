@@ -47,6 +47,7 @@ namespace frontEndSimulation
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            main.clearForReRun();
             this.Frame.Navigate(typeof(MainPage));
         }
     }

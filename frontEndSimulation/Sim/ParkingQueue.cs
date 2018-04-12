@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 namespace Parkeringssimulering
 {
     /// <summary>
-    /// 
+    /// A ParkingQueue
     /// </summary>
     public class ParkingQueue
     {
         /// <summary>
-        /// The name
+        /// The name of the parkingQueue
         /// </summary>
         public String name;
         /// <summary>
@@ -39,7 +39,7 @@ namespace Parkeringssimulering
         /// <summary>
         /// Checks if possible to place more cars in this queue.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if there is room for cars in this queue</returns>
         public bool checkIfFree()
         {
             if (carsInQueue.Count < maxPossibleCarsInQueue)
