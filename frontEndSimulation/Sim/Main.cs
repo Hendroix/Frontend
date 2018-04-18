@@ -30,13 +30,15 @@ namespace Parkeringssimulering
         /// Parkingqueues
         /// </summary>
         public static ParkingQueue e6South, tuneVeienNorth, tuneVeienNorth_1, tuneVeienSouth, gralumVeienNorth, gralumVeienNorth_1,
-                sykehusVeienNorth, sykehusVeienNorth_1, sykehusVeienNorth_2, sykehusVeienNorth_3, sykehusVeienNorth_4, sykehusVeienSouth, sykehusVeienSouth_1, sykehusVeienSouth_2,
+                sykehusVeienNorth, sykehusVeienNorth_1, sykehusVeienNorth_2, sykehusVeienNorth_3, sykehusVeienNorth_4, sykehusVeienSouth, 
+            sykehusVeienSouth_1, sykehusVeienSouth_2,
                 sykehusVeienSouth_3, sykehusVeienSouth_4;
         public static int[] parkingPercentage;
         /// <summary>
         /// Integers to keep track of 
         /// </summary>
-        public static int arrivingCars, maxParkingspots, freeSpaces, takenSpaces, totalAmountOfCars, currentSimTime, finalSimTime, counldtFindParking, delaySleepTime, currentlyMade, totalAmountOfCarsCounter;
+        public static int arrivingCars, maxParkingspots, freeSpaces, takenSpaces, totalAmountOfCars, 
+            currentSimTime, finalSimTime, counldtFindParking, delaySleepTime, currentlyMade, totalAmountOfCarsCounter;
         /// <summary>
         /// Initializes the specified parking spots with the parameters as conditions.
         /// </summary>
@@ -365,7 +367,7 @@ namespace Parkeringssimulering
                     }
                 }
                 //Traverse the parkingqueues and move cars that are in the queue.
-                for (int i = 0; i < 2; i++) { 
+                for (int i = 0; i < 4; i++) { 
                 foreach (ParkingQueue pq in parkingQueueArrayCheck)
                 {
                     //Fra E6
@@ -1300,7 +1302,9 @@ namespace Parkeringssimulering
         private static string translateIntervalsToTime(int intervals)
         {
             string timeString = "";
-            int tmpTime = intervals;
+            double tmpTime = intervals;
+            int min;
+            double sek;
             int[] timeIntervals = { 0,360,720,1080,1440,1800,2160,2520,2880,3240,3600,3960,4320,4680,5040,5400,5760,6120,6480,6840,7200,8560,7920,8280,8640};
             for(int i = 1; i < timeIntervals.Length; i++)
             {
@@ -1309,21 +1313,27 @@ namespace Parkeringssimulering
                     if ((i - 1) < 10)
                     {
                         timeString += "0" + (i-1) + ":";
-                        tmpTime = (tmpTime - (timeIntervals[i - 1])) / 6;
+                        tmpTime = (tmpTime - (timeIntervals[i - 1]));
                     }
                     else
                     {
                         timeString += (i-1) + ":";
-                        tmpTime = (tmpTime - (timeIntervals[i - 1])) / 6;
+                        tmpTime = (tmpTime - (timeIntervals[i - 1]));
 
                     }
-                    if(tmpTime < 10)
+                    if(tmpTime < 60)
                     {
-                        timeString += "0" + tmpTime;
+                        min = (int)tmpTime / 6;
+                        timeString += "0" + min + ":";
+                        sek = tmpTime - min;
+                        timeString += (sek * 60);
                     }
                     else
                     {
-                        timeString += tmpTime;
+                        min = (int)tmpTime / 6;
+                        timeString += min + ":";
+                        sek = tmpTime - min;
+                        timeString += (sek * 60);
                     }
                 }
             }
