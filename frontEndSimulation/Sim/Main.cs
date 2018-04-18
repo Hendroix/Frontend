@@ -1325,15 +1325,23 @@ namespace Parkeringssimulering
                     {
                         min = (int)tmpTime / 6;
                         timeString += "0" + min + ":";
-                        sek = tmpTime - min;
-                        timeString += (sek * 60);
+                        sek = (tmpTime / 6) - min;
                     }
                     else
                     {
                         min = (int)tmpTime / 6;
                         timeString += min + ":";
-                        sek = tmpTime - min;
-                        timeString += (sek * 60);
+                        sek = (tmpTime / 6) - min;
+                    }
+                    if ( sek <= (1/6))
+                    {
+                        timeString += "0" + (int)((sek + 0.0000001) * 60.0);
+
+                    }
+                    else
+                    {
+                        timeString += (int)((sek + 0.0000001) * 60.0);
+
                     }
                 }
             }
