@@ -383,6 +383,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 tuneVeienSouth.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + tuneVeienSouth.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -391,6 +392,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienNorth.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienNorth.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -409,6 +411,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -420,6 +423,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 tuneVeienNorth_1.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + tuneVeienNorth_1.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -438,6 +442,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -449,6 +454,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 tuneVeienNorth_1.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + tuneVeienNorth_1.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -467,6 +473,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienNorth.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienNorth.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -485,6 +492,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 gralumVeienNorth_1.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + gralumVeienNorth_1.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -503,6 +511,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 tuneVeienSouth.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + tuneVeienSouth.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -511,6 +520,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienNorth.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienNorth.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -529,6 +539,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
                             }
@@ -542,6 +553,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
                             }
@@ -555,6 +567,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
                             }
@@ -568,6 +581,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
                             }
@@ -581,6 +595,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
                             }
@@ -594,6 +609,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(130);
                             }
@@ -607,6 +623,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienNorth_1.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienNorth_1.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(130);
                             }
@@ -625,6 +642,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(50);
                             }
@@ -638,6 +656,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienNorth_2.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienNorth_2.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(50);
                             }
@@ -656,6 +675,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienNorth_3.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienNorth_3.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -674,6 +694,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -687,6 +708,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -700,6 +722,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -713,6 +736,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienNorth_4.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienNorth_4.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -730,6 +754,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienSouth.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienSouth.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -748,6 +773,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -761,6 +787,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + cc.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -774,6 +801,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -787,6 +815,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienSouth_1.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination + " Er nå på " + sykehusVeienSouth_1.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -804,6 +833,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienSouth_2.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienSouth_2.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -823,6 +853,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -836,6 +867,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 sykehusVeienSouth_3.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienSouth_3.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -854,6 +886,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -867,6 +900,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -880,6 +914,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -893,6 +928,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -906,6 +942,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -919,6 +956,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
@@ -931,7 +969,8 @@ namespace Parkeringssimulering
                             else if (sykehusVeienSouth_4.checkIfFree() == true)
                             {
                                 pq.carsInQueue.Dequeue();
-                                sykehusVeienNorth_4.carsInQueue.Enqueue(c);
+                                sykehusVeienSouth_4.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + sykehusVeienSouth_4.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(100);
                             }
@@ -950,6 +989,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 tuneVeienSouth.carsInQueue.Enqueue(c);
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Er nå på " + tuneVeienSouth.name;
                                 c.setTimeOfQueuing(currentSimTime);
                                 c.setDistanceDriven(130);
                             }
