@@ -787,7 +787,7 @@ namespace Parkeringssimulering
                             {
                                 pq.carsInQueue.Dequeue();
                                 ps.listOfCars.Add(c);
-                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + cc.Destination.name + " Jeg har nå parkert på: " + ps.name;
+                                returnStringContext += "\r\n Bil:" + c.id + " Skal til :" + c.Destination.name + " Jeg har nå parkert på: " + ps.name;
                                 c.setTimeOfQueuing(currentSimTime + 1);
                                 c.setDistanceDriven(100);
                             }
