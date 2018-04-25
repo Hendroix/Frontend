@@ -314,11 +314,11 @@ namespace frontEndSimulation
             TextBox p7 = this.FindName("pplass7") as TextBox;
             p7.Text = ((int)(45 * percentage)).ToString();
             TextBox p8 = this.FindName("pplass8") as TextBox;
-            p8.Text = ((int)(40 * percentage)).ToString();
+            p8.Text = ((int)(130 * percentage)).ToString();
             TextBox p9 = this.FindName("pplass9") as TextBox;
             p9.Text = ((int)(115 * percentage)).ToString();
             TextBox p10 = this.FindName("pplass10") as TextBox;
-            p10.Text = ((int)(110 * percentage)).ToString();
+            p10.Text = ((int)(130 * percentage)).ToString();
             TextBox p11 = this.FindName("pplass11") as TextBox;
             p11.Text = ((int)(110 * percentage)).ToString();
 
