@@ -31,37 +31,37 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,503,0,0" Text="Tune Senteret" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
         <TextBox x:Name="pplass9" InputScope="Number" HorizontalAlignment="Left" Margin="161,503,0,0" Text="115" VerticalAlignment="Top" TextAlignment="Center" MaxLength="3" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,553,0,0" Text="Adecco og IF" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="pplass10" InputScope="Number" HorizontalAlignment="Left" Margin="161,553,0,0" Text="110" VerticalAlignment="Top" TextAlignment="Center" MaxLength="3" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
+        <TextBox x:Name="pplass10" InputScope="Number" HorizontalAlignment="Left" Margin="161,553,0,0" Text="130" VerticalAlignment="Top" TextAlignment="Center" MaxLength="3" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,603,0,0" Text="Fagforbundet" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
         <TextBox x:Name="pplass11" InputScope="Number" HorizontalAlignment="Left" Margin="161,603,0,0" Text="110" VerticalAlignment="Top" TextAlignment="Center" MaxLength="3" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,653,0,0" Text="Totalt antall parkeringsplasser:" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="136"/>
-        <TextBlock x:Name="totalpplass" HorizontalAlignment="Left" Margin="161,653,0,0" Text="1370" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Height="32" Width="66"/>
+        <TextBlock x:Name="totalpplass" HorizontalAlignment="Left" Margin="161,653,0,0" Text="1480" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Height="32" Width="66"/>
         <!-- Trafikk -->
         <TextBlock FontSize="36" HorizontalAlignment="Left" Margin="394,10,0,0" Text="Inkommende Trafikk" TextWrapping="Wrap" VerticalAlignment="Top" Height="55" Width="336"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,63,0,0" Text="Ønsker seg til:" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="140"/>
         <TextBlock HorizontalAlignment="Left" Margin="550,63,0,0" Text="%" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="72"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,103,0,0" Text="Inspiria" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="p1" InputScope="Number" HorizontalAlignment="Left" Margin="525,103,0,0" Text="10" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p1" InputScope="Number" HorizontalAlignment="Left" Margin="525,103,0,0" Text="4" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,153,0,0" Text="Inspiria Bak" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="p2" InputScope="Number" HorizontalAlignment="Left" Margin="525,153,0,0" Text="3" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p2" InputScope="Number" HorizontalAlignment="Left" Margin="525,153,0,0" Text="2" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,203,0,0" Text="Superland" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="p3" InputScope="Number" HorizontalAlignment="Left" Margin="525,203,0,0" Text="15" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p3" InputScope="Number" HorizontalAlignment="Left" Margin="525,203,0,0" Text="7" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,253,0,0" Text="Quality Hotel" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="p4" InputScope="Number" HorizontalAlignment="Left" Margin="525,253,0,0" Text="15" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p4" InputScope="Number" HorizontalAlignment="Left" Margin="525,253,0,0" Text="9" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,303,0,0" Text="Kiwi" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130" />
-        <TextBox x:Name="p5" InputScope="Number" HorizontalAlignment="Left" Margin="525,303,0,0" Text="15" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p5" InputScope="Number" HorizontalAlignment="Left" Margin="525,303,0,0" Text="14" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,353,0,0" Text="Politihuset" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="p6" InputScope="Number" HorizontalAlignment="Left" Margin="525,353,0,0" Text="12" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p6" InputScope="Number" HorizontalAlignment="Left" Margin="525,353,0,0" Text="16" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,403,0,0" Text="Caverion" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="p7" InputScope="Number" HorizontalAlignment="Left" Margin="525,403,0,0" Text="3" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p7" InputScope="Number" HorizontalAlignment="Left" Margin="525,403,0,0" Text="2" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,453,0,0" Text="K5-Bygget" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="p8" InputScope="Number" HorizontalAlignment="Left" Margin="525,453,0,0" Text="3" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p8" InputScope="Number" HorizontalAlignment="Left" Margin="525,453,0,0" Text="12" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,503,0,0" Text="Tune Senteret" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="p9" InputScope="Number" HorizontalAlignment="Left" Margin="525,503,0,0" Text="8" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p9" InputScope="Number" HorizontalAlignment="Left" Margin="525,503,0,0" Text="11" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,553,0,0" Text="Adecco og IF" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="p10" InputScope="Number" HorizontalAlignment="Left" Margin="525,553,0,0" Text="8" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p10" InputScope="Number" HorizontalAlignment="Left" Margin="525,553,0,0" Text="12" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,603,0,0" Text="Fagforbundet" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="130"/>
-        <TextBox x:Name="p11" InputScope="Number" HorizontalAlignment="Left" Margin="525,603,0,0" Text="8" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
+        <TextBox x:Name="p11" InputScope="Number" HorizontalAlignment="Left" Margin="525,603,0,0" Text="11" VerticalAlignment="Top" TextAlignment="Center" MaxLength="2" TextChanged="TextBox_TextChanged_1" KeyDown="TextBox_KeyDown_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,653,0,0" Text="Total %:" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="136"/>
         <TextBlock x:Name="percentage" HorizontalAlignment="Left" Margin="525,653,0,-5" Text="100%" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Height="72" Width="66" Foreground="Green"/>
         <!-- Biler -->
