@@ -21,6 +21,7 @@ namespace Parkeringssimulering
         public static Random s_Random = new Random();
         public static int[] randomArray = new int[1000000], randomArray3 = new int[1000000];
         public static double[] randomArray2 = new double[1000000];
+        public static int[] amountOfCars2 = new int[100000000];
         public static int randomPointer = 1, randomPointer2 = 1, randomPointer3 = 1;
         /// <summary>
         /// Parkingspots 
@@ -38,7 +39,7 @@ namespace Parkeringssimulering
         /// Integers to keep track of 
         /// </summary>
         public static int arrivingCars, maxParkingspots, freeSpaces, takenSpaces, totalAmountOfCars, 
-            currentSimTime, finalSimTime, counldtFindParking, delaySleepTime, currentlyMade, totalAmountOfCarsCounter;
+            currentSimTime, finalSimTime, counldtFindParking, delaySleepTime, currentlyMade, totalAmountOfCarsCounter, tmpAmount;
         /// <summary>
         /// Initializes the specified parking spots with the parameters as conditions.
         /// </summary>
@@ -994,22 +995,44 @@ namespace Parkeringssimulering
                                 c.setDistanceDriven(130);
                             }
                         }
+                        }
                     }
-
                 }
+                tmpAmount = 0;
+                foreach (ParkingQueue pq in parkingQueueArrayCheck)
+                {
+                    tmpAmount += pq.carsInQueue.Count;
                 }
+                amountOfCars2[currentSimTime] = tmpAmount;
                 //End of while simulation loop
                 returnStringContext += "\r\n";
                 currentSimTime++;
             }
             //Simulation ended
             printTotalParkingInfo(parkingspotArray);
+            fintMaxCarsInSimulation(amountOfCars2);
             printTotalParkingInfoCarDetails(parkingspotArray);
             returnStringContext += "\r\n";
             printRemainingCarsInQueue(parkingQueueArrayCheck);
             //send back the simulation data to the MainPage frontend
             return returnStringContext;
         }
+
+        private static void fintMaxCarsInSimulation(int[] amountOfCars2)
+        {
+            int tmpI = 0;
+            int tmpB = amountOfCars2[0];
+            foreach (int i in amountOfCars2)
+            {
+                if (amountOfCars2[i] > tmpB)
+                {
+                    tmpB = amountOfCars2[i];
+                    tmpI = i;
+                }
+            }
+            returnStringContext += "\r\n Flest Biler er det i runde: " + tmpI + " Maxantall biler: " + tmpB;
+        }
+
         /// <summary>
         /// Creates and give purpose to the cars.
         /// </summary>
