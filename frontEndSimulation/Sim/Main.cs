@@ -1101,67 +1101,67 @@ namespace Parkeringssimulering
         {
             int parkingChance = chance;
 
-            if (parkingChance <= parkingPercentage[0] && inspiria.Free())
+            if (parkingChance <= parkingPercentage[0])
             {
                 Car car = new Car(randomPointer, inspiria, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
                 randomPointer++;
             }
-            else if (parkingChance <= parkingPercentage[1] && inspiriaBak.Free())
+            else if (parkingChance <= parkingPercentage[1])
             {
                 Car car = new Car(randomPointer, inspiriaBak, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
                 randomPointer++;
             }
-            else if (parkingChance <= parkingPercentage[2] && superland.Free())
+            else if (parkingChance <= parkingPercentage[2])
             {
                 Car car = new Car(randomPointer, superland, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
                 randomPointer++;
             }
-            else if (parkingChance <= parkingPercentage[3] && quality.Free())
+            else if (parkingChance <= parkingPercentage[3])
             {
                 Car car = new Car(randomPointer, quality, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
                 randomPointer++;
             }
-            else if (parkingChance <= parkingPercentage[4] && kiwi.Free())
+            else if (parkingChance <= parkingPercentage[4])
             {
                 Car car = new Car(randomPointer, kiwi, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
                 randomPointer++;
             }
-            else if (parkingChance <= parkingPercentage[5] && politi.Free())
+            else if (parkingChance <= parkingPercentage[5])
             {
                 Car car = new Car(randomPointer, politi, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
                 randomPointer++;
             }
-            else if (parkingChance <= parkingPercentage[6] && caverion.Free())
+            else if (parkingChance <= parkingPercentage[6])
             {
                 Car car = new Car(randomPointer, caverion, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
                 randomPointer++;
             }
-            else if (parkingChance <= parkingPercentage[7] && k5.Free())
+            else if (parkingChance <= parkingPercentage[7])
             {
                 Car car = new Car(randomPointer, k5, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
                 randomPointer++;
             }
-            else if (parkingChance <= parkingPercentage[8] && tuneSenter.Free())
+            else if (parkingChance <= parkingPercentage[8])
             {
                 Car car = new Car(randomPointer, tuneSenter, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
                 randomPointer++;
             }
-            else if (parkingChance <= parkingPercentage[9] && adeccoAndIf.Free())
+            else if (parkingChance <= parkingPercentage[9])
             {
                 Car car = new Car(randomPointer, adeccoAndIf, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
                 randomPointer++;
             }
-            else if (parkingChance <= parkingPercentage[10] && fagforbundet.Free())
+            else if (parkingChance <= parkingPercentage[10])
             {
                 Car car = new Car(randomPointer, fagforbundet, queuespot, currentSimTime);
                 placeInQueue(queuespot, car);
