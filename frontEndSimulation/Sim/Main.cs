@@ -40,6 +40,7 @@ namespace Parkeringssimulering
         /// </summary>
         public static int arrivingCars, maxParkingspots, freeSpaces, takenSpaces, totalAmountOfCars, 
             currentSimTime, finalSimTime, counldtFindParking, delaySleepTime, currentlyMade, totalAmountOfCarsCounter, tmpAmount;
+        private static int fromE6, FromTuneveien, FromGraalumveien, FromSykehusveien;
         /// <summary>
         /// Initializes the specified parking spots with the parameters as conditions.
         /// </summary>
@@ -998,6 +999,7 @@ namespace Parkeringssimulering
                         }
                     }
                 }
+                returnStringContext += "\r\n";
                 tmpAmount = 0;
                 foreach (ParkingQueue pq in parkingQueueArrayCheck)
                 {
@@ -1014,6 +1016,7 @@ namespace Parkeringssimulering
             printTotalParkingInfoCarDetails(parkingspotArray);
             returnStringContext += "\r\n";
             printRemainingCarsInQueue(parkingQueueArrayCheck);
+            printTravelingInfoAboutCars(parkingspotArray);
             //send back the simulation data to the MainPage frontend
             return returnStringContext;
         }
@@ -1249,6 +1252,7 @@ namespace Parkeringssimulering
         /// <param name="car">The car.</param>
         private static void placeInQueue(ParkingQueue queuespot, Car car)
         {
+
             queuespot.carsInQueue.Enqueue(car);
             returnStringContext += ("Car: " + car.id + ", Skal til: " + car.Destination.name + ", kommer fra " + queuespot.name);
             returnStringContext += "\r\n";
@@ -1487,6 +1491,9 @@ namespace Parkeringssimulering
             returnStringContext += "Total distance kjørt for alle biler: " + (totalDistanceAllCars / 1000) + " Km";
             returnStringContext += "\r\n";
             returnStringContext += "Total tid brukt på alle biler: " + translateIntervalsToTime(totalWaitingTimeAllCars);
+            returnStringContext += "\r\n";
+
+
         }
         /// <summary>
         /// Prints the remaining cars in queue.
@@ -1538,6 +1545,37 @@ namespace Parkeringssimulering
             }
             */
 
+        }
+        static void printTravelingInfoAboutCars(Parkingspot[] array)
+        {
+            foreach (Parkingspot ps in array)
+            {
+                int e6 = 0, tv = 0, gv = 0;
+                foreach (Car c in ps.listOfCars)
+                {
+                    if (c.arrivalFrom.name == "E6")
+                    {
+                        e6++;
+                    }
+                    else if (c.arrivalFrom.name == "TuneveienNorth")
+                    {
+                        tv++;
+                    }
+                    else if (c.arrivalFrom.name == "GrålumveienNorth")
+                    {
+                        gv++;
+                    }
+                }
+                returnStringContext += "\r\n";
+                returnStringContext += "Parkert på " + ps.name;
+                returnStringContext += "\r\n";
+                returnStringContext += "Biler som kommer fra E6             : " + e6;
+                returnStringContext += "\r\n";
+                returnStringContext += "Biler som kommer fra Grålumveien    : " + gv;
+                returnStringContext += "\r\n";
+                returnStringContext += "Biler som kommer fra Tuneveien      : " + tv;
+                returnStringContext += "\r\n";
+            }
         }
     }
 }

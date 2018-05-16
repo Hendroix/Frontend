@@ -27,6 +27,7 @@ namespace Parkeringssimulering
         /// The time of queuing
         /// </summary>
         public double timeOfQueuing;
+        private bool orgcheck = false;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Car" /> class.
@@ -82,7 +83,11 @@ namespace Parkeringssimulering
         /// <param name="ps">The ps.</param>
         public void setDestination(Parkingspot ps)
         {
-            originalDestination = Destination;
+            if (this.orgcheck == false)
+            {
+                originalDestination = Destination;
+                orgcheck = true;
+            }
             this.Destination = ps;
         }
         /// <summary>
